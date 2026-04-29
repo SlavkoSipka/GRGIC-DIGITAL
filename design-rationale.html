@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI mišljenje o dizajnu — DBG</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #111111;
+    --ink-muted: #4a4a4a;
+    --ink-faint: #888888;
+    --rule: #d8d8d8;
+
+    --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: #c9c9c9;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    padding: 32px 16px;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 22mm 22mm;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10pt;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 22pt;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 11pt;
+    color: var(--ink);
+  }
+  .brand small {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 6.5pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 3pt;
+    font-weight: 400;
+  }
+  .stamp {
+    font-family: var(--font-mono);
+    font-size: 7pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: right;
+  }
+  .stamp strong {
+    display: block;
+    color: var(--ink);
+    margin-top: 3pt;
+    font-weight: 500;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 7pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 32pt;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 8pt 0 0;
+    max-width: 22ch;
+    color: var(--ink);
+  }
+
+  p {
+    font-size: 10pt;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 9pt;
+  }
+  p strong { color: var(--ink); font-weight: 500; }
+
+  .lead {
+    font-family: var(--font-display);
+    font-size: 12pt;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 400;
+    border-left: 1px solid var(--ink);
+    padding-left: 14pt;
+    margin: 18pt 0;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 13pt;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin: 22pt 0 10pt;
+    padding-bottom: 4pt;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12pt;
+    margin-top: 6pt;
+  }
+  .pillar {
+    border: 1px solid var(--rule);
+    padding: 12pt;
+    background: var(--paper);
+  }
+  .pillar h3 {
+    font-family: var(--font-display);
+    font-size: 11pt;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 6pt;
+    letter-spacing: -0.01em;
+  }
+  .pillar p {
+    font-size: 8.5pt;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .pillar code {
+    font-family: var(--font-mono);
+    font-size: 7.5pt;
+    color: var(--ink);
+  }
+
+  .verdict {
+    margin-top: 22pt;
+    padding: 14pt 16pt;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    display: flex;
+    gap: 14pt;
+    align-items: flex-start;
+  }
+  .verdict__label {
+    font-family: var(--font-mono);
+    font-size: 7pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+    padding-top: 2pt;
+    width: 64pt;
+  }
+  .verdict__text {
+    font-family: var(--font-display);
+    font-size: 11.5pt;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+    font-weight: 400;
+  }
+  .verdict__text strong { font-weight: 500; }
+
+  .foot {
+    position: absolute;
+    bottom: 14mm;
+    left: 22mm;
+    right: 22mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 6.5pt;
+    color: var(--ink-faint);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-top: 1px solid var(--rule);
+    padding-top: 6pt;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; margin: 0; }
+    .no-print { display: none !important; }
+  }
+
+  .print-hint {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+  }
+</style>
+</head>
+<body>
+
+<div class="print-hint no-print">
+  Pritisni <strong>Ctrl + P</strong> &nbsp;→&nbsp; Save as PDF
+</div>
+
+<section class="page">
+  <div class="top">
+    <div class="brand">
+      Digital Business Grgic
+      <small>www.digital-business-mg.com</small>
+    </div>
+    <div class="stamp">
+      AI osvrt
+      <strong>April 2026</strong>
+    </div>
+  </div>
+
+  <span class="eyebrow">Pitao sam AI šta misli o ovom dizajnu</span>
+  <h1>Sajt deluje ozbiljno i izvedeno do kraja.</h1>
+
+  <p class="lead">
+    Ovo je dizajn koji odmah pokazuje da znaš šta radiš. Tamna pozadina, čista
+    tipografija i suzdržanost kod efekata &mdash; to je tačno onaj jezik kojim
+    danas pričaju Stripe, Linear i Vercel. Klijent kome treba digitalna
+    usluga, prvih par sekundi pomisli &bdquo;ovi izgledaju kao da rade za prave firme&ldquo;.
+  </p>
+
+  <p>
+    Najjača stvar je <strong>doslednost</strong>. Sve je na 8&nbsp;px gridu, sve
+    sekcije idu istim ritmom (mali label &rarr; veliki naslov &rarr; tekst &rarr; CTA),
+    a akcentna boja se pojavljuje samo gde treba &mdash; kod dugmadi i na po
+    jednoj reči u naslovu. Ta disciplina je razlika između &bdquo;lepog dizajna&ldquo;
+    i &bdquo;studija u koji se može uložiti novac&ldquo;.
+  </p>
+
+  <p>
+    Premium osećaj dolazi iz mnogo malih stvari odjednom: dosta praznog prostora
+    (whitespace = signal kvaliteta), animacije ispod 800&nbsp;ms, editorial layout
+    umesto klasičnih kartica svuda, off-white tekst umesto čisto belog. Sve to je
+    nevidljivo dok je tu, ali bi se odmah primetilo da nije.
+  </p>
+
+  <h2>Brzi pregled</h2>
+  <div class="pillars">
+    <div class="pillar">
+      <h3>Boje</h3>
+      <p>
+        Klasično <strong>60-30-10</strong>: skoro crna <code>#050507</code>,
+        brand plava <code>#1E5FCC</code> kao nosilac poverenja, i cyan
+        <code>#22D3D8</code> samo za CTA. Sistem koji uvek radi.
+      </p>
+    </div>
+
+    <div class="pillar">
+      <h3>Tipografija</h3>
+      <p>
+        <strong>Space Grotesk</strong> za naslove, <strong>Inter</strong> za telo,
+        <strong>JetBrains Mono</strong> za labele. Tri uloge, ne meša se &mdash;
+        isti stack koji koriste Figma, GitHub i Linear.
+      </p>
+    </div>
+
+    <div class="pillar">
+      <h3>Ritam</h3>
+      <p>
+        8&nbsp;px spacing grid + tipografska skala 1.25 (Major&nbsp;Third) +
+        Apple-style easing <code>cubic-bezier(.22,1,.36,1)</code>. Nigde
+        magičnih brojeva &mdash; sve sedi na sistemu.
+      </p>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <span class="verdict__label">Zaključak</span>
+    <p class="verdict__text">
+      Discipline-driven dizajn &mdash; ne pokušava da te zaslepi efektima, nego
+      da te ubedi <strong>rasporedom, prostorom i izborom fontova</strong>.
+      Tačno ono što ozbiljan B2B klijent prepoznaje kao kvalitet. Solidno odrađeno.
+    </p>
+  </div>
+
+  <div class="foot">
+    <span>AI osvrt · DBG · v1.0</span>
+    <span>1 / 1</span>
+  </div>
+</section>
+
+</body>
+</html>

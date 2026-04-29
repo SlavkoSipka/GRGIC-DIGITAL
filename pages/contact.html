@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050507" />
+
+  <title>Contact — Digital Business Grgic</title>
+  <meta name="description" content="Start a project or book a discovery call with Digital Business Grgic — Swiss digital studio." />
+
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body class="page-contact">
+
+  <!-- Decorative blue glow on the right -->
+  <div class="page-contact__bg" aria-hidden="true">
+    <div class="page-contact__glow page-contact__glow--brand"></div>
+    <div class="page-contact__glow page-contact__glow--accent"></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="../index.html" aria-label="Digital Business Grgic – home">
+      <img src="../assets/logo-sm.webp" alt="" width="36" height="36" />
+      <span>
+        Digital Business Grgic
+        <small>Switzerland</small>
+      </span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#nicemodels">Work</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+
+    <a class="btn btn--primary nav__cta" href="contact.html">Book a call</a>
+  </header>
+
+  <main>
+    <div class="container contact-grid">
+
+      <aside class="contact-aside" data-reveal>
+        <span class="eyebrow">Contact · Get in touch</span>
+        <h1 class="contact-aside__title">
+          Let&rsquo;s talk about<br/>
+          what you&rsquo;re <em>building</em>.
+        </h1>
+        <p class="contact-aside__lede">
+          Tell us a few details and pick a slot. We reply within one business day &mdash;
+          no templates, no handoff to a sales team.
+        </p>
+
+        <ul class="contact-aside__points">
+          <li><span>01</span><div><strong>Direct line to Marko</strong><small>You speak with the person scoping &amp; building.</small></div></li>
+          <li><span>02</span><div><strong>30&nbsp;min, no obligation</strong><small>A focused conversation, not a pitch.</small></div></li>
+          <li><span>03</span><div><strong>Languages</strong><small>English &middot; German</small></div></li>
+        </ul>
+
+        <div class="contact-aside__direct">
+          <a class="cta__email" href="mailto:contact@digital-business-mg.com">
+            <span aria-hidden="true">✉</span>
+            contact@digital-business-mg.com
+          </a>
+          <small>Feldstrasse 14 &middot; CH-5415 Nussbaumen</small>
+        </div>
+      </aside>
+
+      <section class="contact-card" data-reveal>
+        <form id="contact-form" class="contact-form" action="#" method="post" novalidate>
+          <div class="cf-row cf-row--two">
+            <div class="field">
+              <label for="cf-name">Full name <span class="req">*</span></label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Marko Grgic" />
+            </div>
+            <div class="field">
+              <label for="cf-email">Email <span class="req">*</span></label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" />
+            </div>
+          </div>
+
+          <div class="cf-row cf-row--two">
+            <div class="field">
+              <label for="cf-company">Company <span class="opt">optional</span></label>
+              <input id="cf-company" name="company" type="text" autocomplete="organization" placeholder="Your company / brand" />
+            </div>
+            <div class="field">
+              <label for="cf-service">Service of interest <span class="req">*</span></label>
+              <div class="select-wrap">
+                <select id="cf-service" name="service" required>
+                  <option value="" disabled selected>Choose a category…</option>
+                  <option value="digital-transformation">Digital Transformation</option>
+                  <option value="process-optimization">Process Optimization</option>
+                  <option value="websites">Websites &amp; Internet Presence</option>
+                  <option value="eshops">eShops &amp; eCommerce</option>
+                  <option value="listings">Listings &amp; Inserate</option>
+                  <option value="company-formation">Company Formation Support</option>
+                  <option value="online-consulting">Online Consulting</option>
+                  <option value="digital-tools">Digital Tools Sourcing</option>
+                  <option value="other">Other / Not sure yet</option>
+                </select>
+                <span class="select-wrap__chev" aria-hidden="true">▾</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="cf-budget">Estimated budget <span class="opt">optional</span></label>
+            <div class="select-wrap">
+              <select id="cf-budget" name="budget">
+                <option value="" disabled selected>Pick a range…</option>
+                <option value="lt-3k">&lt; CHF 3'000</option>
+                <option value="3-8k">CHF 3'000 — 8'000</option>
+                <option value="8-20k">CHF 8'000 — 20'000</option>
+                <option value="20k-plus">CHF 20'000+</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+              <span class="select-wrap__chev" aria-hidden="true">▾</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="cf-message">Project brief <span class="req">*</span></label>
+            <textarea id="cf-message" name="message" required placeholder="A few sentences about your goal, audience, current situation and timeline."></textarea>
+          </div>
+
+          <!-- Booking toggle -->
+          <div class="cf-booking">
+            <label class="cf-toggle">
+              <input id="cf-book" type="checkbox" name="book" />
+              <span class="cf-toggle__track" aria-hidden="true"></span>
+              <span class="cf-toggle__copy">
+                <strong>Book a 30-minute discovery call</strong>
+                <small>Pick a date &amp; time below — confirmed by email.</small>
+              </span>
+            </label>
+
+            <div class="cf-calendar" id="cf-calendar" hidden>
+              <div class="cf-cal-head">
+                <button type="button" class="cf-cal-nav" data-dir="-1" aria-label="Previous month">‹</button>
+                <span class="cf-cal-month" id="cf-cal-month">—</span>
+                <button type="button" class="cf-cal-nav" data-dir="1" aria-label="Next month">›</button>
+              </div>
+              <div class="cf-cal-dows" aria-hidden="true">
+                <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+              </div>
+              <div class="cf-cal-grid" id="cf-cal-grid" role="grid"></div>
+
+              <div class="cf-slots" id="cf-slots" hidden>
+                <h6 class="cf-slots__title">Pick a time <small id="cf-slots-day">—</small></h6>
+                <div class="cf-slots__grid">
+                  <button type="button" class="cf-slot" data-time="09:30">09:30</button>
+                  <button type="button" class="cf-slot" data-time="11:00">11:00</button>
+                  <button type="button" class="cf-slot" data-time="13:30">13:30</button>
+                  <button type="button" class="cf-slot" data-time="15:00">15:00</button>
+                  <button type="button" class="cf-slot" data-time="16:30">16:30</button>
+                  <button type="button" class="cf-slot" data-time="18:00">18:00</button>
+                </div>
+                <small class="cf-slots__tz">All times in CET / Europe/Zurich</small>
+              </div>
+
+              <input type="hidden" name="booking_date" id="cf-booking-date" />
+              <input type="hidden" name="booking_time" id="cf-booking-time" />
+            </div>
+          </div>
+
+          <div class="cf-submit">
+            <button type="submit" class="btn btn--primary">
+              <span id="cf-submit-label">Send message</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+            <small>Or email us at <a href="mailto:contact@digital-business-mg.com">contact@digital-business-mg.com</a></small>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="../assets/logo-sm.webp" alt="Digital Business Grgic" width="56" height="56" />
+          <p>
+            Swiss sole proprietorship offering digital services for visibility,
+            process optimization and consulting &mdash; nationally and internationally.
+            Founded and run by Marko Grgic.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h6>Studio</h6>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#nicemodels">Work</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h6>Contact</h6>
+          <ul>
+            <li><a href="mailto:contact@digital-business-mg.com">contact@digital-business-mg.com</a></li>
+            <li>Feldstrasse 14<br/>CH-5415 Nussbaumen</li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h6>Legal</h6>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="agb.html">Terms (AGB)</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> Digital Business Grgic · All rights reserved</span>
+        <span>www.digital-business-mg.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts/main.js" defer></script>
+</body>
+</html>

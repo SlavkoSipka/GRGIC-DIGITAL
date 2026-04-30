@@ -2183,12 +2183,17 @@ body.is-loaded .hero__scroll {
   font-weight: 400;
 }
 .footer__col ul { display: flex; flex-direction: column; gap: 10px; }
-.footer__col a {
-  color: rgba(5, 5, 7, 0.62);
+.footer__col li {
+  color: rgba(5, 5, 7, 0.45);
   font-size: 0.95rem;
+}
+.footer__col a {
+  color: #050507;
+  font-size: 0.95rem;
+  font-weight: 600;
   transition: color var(--dur-fast) var(--ease);
 }
-.footer__col a:hover { color: #050507; }
+.footer__col a:hover { color: var(--brand); }
 
 .footer__bottom {
   display: flex;

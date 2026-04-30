@@ -46,27 +46,28 @@ ul, ol { list-style: none; }
 
 ::selection {
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
 }
 
 /* ---------- 2. TOKENS ---------- */
 :root {
-  /* Colour — 60-30-10 */
-  --bg: #050507;                              /* 60% – primary background */
-  --bg-elevated: #0B0B0F;
-  --surface: #101015;
-  --text: #F5F5F7;                            /* 60% – primary text */
-  --text-muted: rgba(245, 245, 247, 0.58);    /* derived via opacity */
-  --text-faint: rgba(245, 245, 247, 0.32);
-  --border: rgba(245, 245, 247, 0.08);
-  --border-strong: rgba(245, 245, 247, 0.18);
+  /* Colour — 60-30-10 (light theme) */
+  --bg: #FFFFFF;                              /* 60% – primary background */
+  --bg-elevated: #F4F4F6;
+  --surface: #EBEBEF;
+  --text: #0A0A0F;                            /* 60% – primary text */
+  --text-muted: rgba(10, 10, 15, 0.62);       /* derived via opacity */
+  --text-faint: rgba(10, 10, 15, 0.40);
+  --border: rgba(10, 10, 15, 0.10);
+  --border-strong: rgba(10, 10, 15, 0.22);
 
   --brand: #1E5FCC;                           /* 30% – secondary (logo blue) */
   --brand-deep: #0E2E66;
-  --brand-soft: rgba(30, 95, 204, 0.14);
+  --brand-soft: rgba(30, 95, 204, 0.10);
 
   --accent: #22D3D8;                          /* 10% – CTAs only (logo teal) */
   --accent-glow: rgba(34, 211, 216, 0.35);
+  --on-accent: #0A0A0F;                       /* text colour on accent/brand fills */
 
   /* Typography */
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -256,7 +257,7 @@ section {
   border-bottom: 1px solid transparent;
 }
 .nav.is-scrolled {
-  background: rgba(5, 5, 7, 0.72);
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: saturate(140%) blur(18px);
   -webkit-backdrop-filter: saturate(140%) blur(18px);
   border-bottom-color: var(--border);
@@ -272,11 +273,11 @@ section {
   letter-spacing: -0.01em;
 }
 .nav__brand img {
-  width: 80px;
+  width: 96px;
   height: auto;
   object-fit: contain;
   flex-shrink: 0;
-  margin-block: -18px;  /* logo overflows navbar without pushing its height */
+  margin-block: -22px;
 }
 .nav__brand span small {
   display: block;
@@ -335,7 +336,7 @@ section {
 
 .btn--primary {
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
   box-shadow: 0 0 0 0 var(--accent-glow);
 }
 .btn--primary:hover {
@@ -349,7 +350,7 @@ section {
 }
 .btn--ghost:hover {
   background: var(--text);
-  color: var(--bg);
+  color: #FFFFFF;
   border-color: var(--text);
 }
 
@@ -440,7 +441,7 @@ section {
 }
 .orbit__ring:nth-child(4) {
   inset: 30%;
-  border: 1px dashed rgba(245, 245, 247, 0.08);
+  border: 1px dashed rgba(10, 10, 15, 0.10);
   animation-duration: 120s;
   animation-direction: reverse;
 }
@@ -451,7 +452,7 @@ section {
   width: 38%;
   height: 38%;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, var(--brand) 0%, var(--brand-deep) 55%, #050507 100%);
+  background: radial-gradient(circle at 30% 30%, var(--brand) 0%, var(--brand-deep) 60%, #FFFFFF 100%);
   box-shadow:
     inset 0 0 60px rgba(34, 211, 216, 0.25),
     0 0 80px rgba(30, 95, 204, 0.4);
@@ -1951,7 +1952,7 @@ body.is-loaded .hero__scroll {
 }
 .cta__glow-ring {
   position: absolute;
-  border: 1px solid rgba(245, 245, 247, 0.05);
+  border: 1px solid rgba(10, 10, 15, 0.06);
   border-radius: 50%;
   width: 600px;
   height: 600px;
@@ -1959,7 +1960,7 @@ body.is-loaded .hero__scroll {
 .cta__glow-ring:nth-child(2) {
   width: 900px;
   height: 900px;
-  border-color: rgba(34, 211, 216, 0.06);
+  border-color: rgba(34, 211, 216, 0.18);
 }
 
 .cta__inner {
@@ -2115,7 +2116,7 @@ body.is-loaded .hero__scroll {
   border: 1px solid var(--border);
   border-radius: var(--r-pill);
   transition: all var(--dur-fast) var(--ease);
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(10, 10, 15, 0.02);
 }
 .cta__chips a:hover {
   color: var(--text);
@@ -2153,8 +2154,8 @@ body.is-loaded .hero__scroll {
 }
 
 .footer__brand img {
-  width: 88px;
-  height: 88px;
+  width: 112px;
+  height: auto;
   object-fit: contain;
   margin-bottom: var(--s-2);
 }
@@ -2220,19 +2221,18 @@ body.is-loaded .hero__scroll {
   opacity: 0.85;
 }
 .page-contact__glow--brand {
-  /* big brand glow that stays fully visible on the right */
   top: 18%;
   right: -10%;
   width: 70vmin;
   height: 70vmin;
-  background: radial-gradient(circle at 40% 40%, rgba(30, 95, 204, 0.55), rgba(30, 95, 204, 0) 65%);
+  background: radial-gradient(circle at 40% 40%, rgba(30, 95, 204, 0.28), rgba(30, 95, 204, 0) 65%);
 }
 .page-contact__glow--accent {
   bottom: -12%;
   right: 12%;
   width: 38vmin;
   height: 38vmin;
-  background: radial-gradient(circle at center, rgba(34, 211, 216, 0.30), rgba(34, 211, 216, 0) 65%);
+  background: radial-gradient(circle at center, rgba(34, 211, 216, 0.20), rgba(34, 211, 216, 0) 65%);
   filter: blur(90px);
 }
 
@@ -2323,13 +2323,13 @@ body.is-loaded .hero__scroll {
 
 /* Form card */
 .contact-card {
-  background: rgba(15, 15, 24, 0.65);
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid var(--border-strong);
   border-radius: var(--r-lg);
   padding: clamp(20px, 2.6vw, 32px);
-  box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6);
+  box-shadow: 0 40px 80px -30px rgba(10, 10, 15, 0.18);
 }
 
 /* Form */
@@ -2367,7 +2367,7 @@ body.is-loaded .hero__scroll {
   font-family: var(--font-body);
   font-size: 0.96rem;
   color: var(--text);
-  background: rgba(7, 7, 14, 0.55);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 10px;
   outline: none;
@@ -2376,16 +2376,16 @@ body.is-loaded .hero__scroll {
   -webkit-appearance: none;
 }
 .contact-form input::placeholder,
-.contact-form textarea::placeholder { color: rgba(245,245,247,0.32); }
+.contact-form textarea::placeholder { color: rgba(10, 10, 15, 0.38); }
 .contact-form input:hover,
 .contact-form textarea:hover,
-.contact-form select:hover { border-color: rgba(245,245,247,0.18); }
+.contact-form select:hover { border-color: rgba(10, 10, 15, 0.22); }
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus {
-  border-color: rgba(34, 211, 216, 0.40);
-  box-shadow: 0 0 0 3px rgba(30, 95, 204, 0.20);
-  background: rgba(10, 10, 20, 0.7);
+  border-color: rgba(34, 211, 216, 0.55);
+  box-shadow: 0 0 0 3px rgba(30, 95, 204, 0.18);
+  background: #FFFFFF;
 }
 .contact-form textarea { min-height: 130px; resize: vertical; line-height: 1.5; }
 
@@ -2403,7 +2403,7 @@ body.is-loaded .hero__scroll {
 }
 /* Style options from native dropdown */
 .contact-form select option {
-  background: #0E0E18;
+  background: #FFFFFF;
   color: var(--text);
 }
 
@@ -2426,8 +2426,8 @@ body.is-loaded .hero__scroll {
   width: 44px;
   height: 26px;
   border-radius: 999px;
-  background: rgba(245,245,247,0.08);
-  border: 1px solid var(--border);
+  background: rgba(10, 10, 15, 0.06);
+  border: 1px solid var(--border-strong);
   transition: background 200ms ease, border-color 200ms ease;
 }
 .cf-toggle__track::after {
@@ -2436,14 +2436,14 @@ body.is-loaded .hero__scroll {
   top: 3px; left: 3px;
   width: 18px; height: 18px;
   border-radius: 50%;
-  background: #F5F5F7;
+  background: #0A0A0F;
   transition: transform 240ms cubic-bezier(0.6, 0, 0.2, 1);
 }
 .cf-toggle input:checked ~ .cf-toggle__track {
   background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
   border-color: transparent;
 }
-.cf-toggle input:checked ~ .cf-toggle__track::after { transform: translateX(18px); }
+.cf-toggle input:checked ~ .cf-toggle__track::after { background: #FFFFFF; transform: translateX(18px); }
 .cf-toggle__copy strong {
   display: block;
   font-family: var(--font-display);
@@ -2461,7 +2461,7 @@ body.is-loaded .hero__scroll {
 /* Calendar */
 .cf-calendar {
   margin-top: 14px;
-  background: rgba(7, 7, 14, 0.55);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 14px;
@@ -2532,12 +2532,12 @@ body.is-loaded .hero__scroll {
 .cf-day.is-today { color: var(--accent); }
 .cf-day.is-empty,
 .cf-day:disabled {
-  color: rgba(245,245,247,0.18);
+  color: rgba(10, 10, 15, 0.22);
   cursor: not-allowed;
 }
 .cf-day.is-selected {
   background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
-  color: #050507;
+  color: #FFFFFF;
   border-color: transparent;
   box-shadow: 0 0 0 4px rgba(30, 95, 204, 0.18);
 }
@@ -2582,7 +2582,7 @@ body.is-loaded .hero__scroll {
 .cf-slot:hover { background: rgba(30, 95, 204, 0.18); border-color: rgba(34, 211, 216, 0.4); }
 .cf-slot.is-selected {
   background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
-  color: #050507;
+  color: #FFFFFF;
   border-color: transparent;
 }
 .cf-slots__tz {

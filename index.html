@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#050507" />
 
-  <title>Digital Business Grgic — Digital partner for ambitious businesses</title>
-  <meta name="description" content="Swiss digital studio building websites, eShops, listing platforms and process automation. Based in Nussbaumen, AG." />
+  <title data-i18n="meta.title.home">Digital Business Grgic — Digitaler Partner für ambitionierte Unternehmen</title>
+  <meta name="description" data-i18n-content="meta.desc.home" content="Schweizer Digital-Studio für Websites, Online-Shops, Inserateplattformen und Prozessautomatisierung. Standort Nussbaumen, AG." />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Digital Business Grgic — Digital partner for ambitious businesses" />
-  <meta property="og:description" content="Swiss digital studio building websites, eShops, listing platforms and process automation." />
+  <meta property="og:title" data-i18n-content="meta.og.title.home" content="Digital Business Grgic — Digitaler Partner für ambitionierte Unternehmen" />
+  <meta property="og:description" data-i18n-content="meta.og.desc.home" content="Schweizer Digital-Studio für Websites, Online-Shops, Inserateplattformen und Prozessautomatisierung." />
   <meta property="og:image" content="/assets/logo.webp" />
 
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -25,25 +25,32 @@
 
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
-    <a class="nav__brand" href="/" aria-label="Digital Business Grgic – home">
+    <a class="nav__brand" href="/" data-i18n-aria-label="nav.brand.aria" aria-label="Digital Business Grgic – Startseite">
       <img src="/assets/logo-sm.webp" alt="" width="36" height="36" />
       <span>
         Digital Business Grgic
-        <small>Switzerland</small>
+        <small data-i18n="nav.brand.country">Schweiz</small>
       </span>
     </a>
 
-    <nav class="nav__links" aria-label="Primary">
-      <a href="/" aria-current="page">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="pages/contact.html">Contact</a>
+    <nav class="nav__links" data-i18n-aria-label="nav.primary.aria" aria-label="Hauptnavigation">
+      <a href="/" aria-current="page" data-i18n="nav.home">Startseite</a>
+      <a href="#services" data-i18n="nav.services">Leistungen</a>
+      <a href="#about" data-i18n="nav.about">Über uns</a>
+      <a href="pages/contact.html" data-i18n="nav.contact">Kontakt</a>
     </nav>
 
-    <a class="btn btn--primary nav__cta" href="pages/contact.html">
-      Book a call
-      <span class="arrow" aria-hidden="true">→</span>
-    </a>
+    <div class="nav__right">
+      <div class="lang-switch" role="group" data-i18n-aria-label="lang.switch.aria" aria-label="Sprache wechseln">
+        <button type="button" class="lang-switch__btn is-active" data-lang-switch="de" aria-pressed="true">DE</button>
+        <button type="button" class="lang-switch__btn" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
+
+      <a class="btn btn--primary nav__cta" href="pages/contact.html">
+        <span data-i18n="nav.cta">Gespräch buchen</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
   </header>
 
   <main>
@@ -61,74 +68,72 @@
 
       <div class="container">
         <div class="hero__content">
-          <span class="eyebrow hero__eyebrow">Swiss Digital Studio · Nussbaumen, AG</span>
+          <span class="eyebrow hero__eyebrow" data-i18n="hero.eyebrow">Schweizer Digital-Studio · Nussbaumen, AG</span>
 
           <h1 class="hero__title">
-            <span class="word">Digital</span>
-            <span class="word">services</span>
-            <span class="word">for</span>
-            <span class="word"><em>visibility</em>,</span>
-            <span class="word">process</span>
-            <span class="word">&amp;</span>
-            <span class="word">consulting.</span>
+            <span class="word" data-i18n="hero.title.w1">Digitale</span>
+            <span class="word" data-i18n="hero.title.w2">Leistungen</span>
+            <span class="word" data-i18n="hero.title.w3">für</span>
+            <span class="word" data-i18n="hero.title.w4"><em>Sichtbarkeit</em>,</span>
+            <span class="word" data-i18n="hero.title.w5">Prozesse</span>
+            <span class="word" data-i18n="hero.title.w6">&amp;</span>
+            <span class="word" data-i18n="hero.title.w7">Beratung.</span>
           </h1>
 
-          <p class="hero__sub">
-            Digital Business Grgic is a Swiss sole proprietorship operating nationally
-            and internationally &mdash; supporting private individuals and businesses
-            with websites, eShops, listing platforms, automation and digital advisory.
+          <p class="hero__sub" data-i18n="hero.sub">
+            Digital Business Grgic ist ein Schweizer Einzelunternehmen, das national und international tätig ist &mdash; und Privatpersonen sowie Unternehmen mit Websites, Online-Shops, Inserateplattformen, Automatisierung und digitaler Beratung unterstützt.
           </p>
 
           <div class="hero__ctas">
             <a class="btn btn--primary" href="pages/contact.html">
-              Start a project
+              <span data-i18n="hero.cta.start">Projekt starten</span>
               <span class="arrow" aria-hidden="true">→</span>
             </a>
-            <a class="btn btn--ghost" href="#services">
-              Explore services
+            <a class="btn btn--ghost" href="#services" data-i18n="hero.cta.explore">
+              Leistungen entdecken
             </a>
           </div>
 
           <div class="hero__meta">
             <div>
-              <small>Based in</small>
-              <strong>Nussbaumen, AG</strong>
+              <small data-i18n="hero.meta.based">Standort</small>
+              <strong data-i18n="hero.meta.based.value">Nussbaumen, AG</strong>
             </div>
             <div>
-              <small>Languages</small>
-              <strong>EN · DE</strong>
+              <small data-i18n="hero.meta.lang">Sprachen</small>
+              <strong data-i18n="hero.meta.lang.value">DE · EN</strong>
             </div>
             <div>
-              <small>Reach us</small>
-              <strong>contact@digital-business-mg.com</strong>
+              <small data-i18n="hero.meta.reach">Kontakt</small>
+              <strong data-i18n="hero.meta.reach.value">contact@digital-business-mg.com</strong>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="hero__scroll" aria-hidden="true">Scroll</div>
+      <div class="hero__scroll" aria-hidden="true" data-i18n="hero.scroll">Scrollen</div>
     </section>
 
     <!-- ============ MARQUEE / CAPABILITIES ============ -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Online Marketing &amp; Growth</span>
-        <span>Web &amp; Tech Services</span>
-        <span>Content &amp; Branding</span>
-        <span>Consulting &amp; Strategy</span>
-        <span>AI &amp; Automation</span>
-        <span>eCommerce Support</span>
-        <span>Company Formation</span>
-        <span>Einzelfirma · GmbH · International</span>
+        <span data-i18n="marq.online">Online-Marketing &amp; Wachstum</span>
+        <span data-i18n="marq.web">Web- &amp; Tech-Services</span>
+        <span data-i18n="marq.content">Content &amp; Branding</span>
+        <span data-i18n="marq.consulting">Beratung &amp; Strategie</span>
+        <span data-i18n="marq.ai">KI &amp; Automatisierung</span>
+        <span data-i18n="marq.ecom">eCommerce-Support</span>
+        <span data-i18n="marq.formation">Firmengründung</span>
+        <span data-i18n="marq.legal">Einzelfirma · GmbH · International</span>
         <!-- duplicate for seamless loop -->
-        <span>Online Marketing &amp; Growth</span>
-        <span>Web &amp; Tech Services</span>
-        <span>Content &amp; Branding</span>
-        <span>Consulting &amp; Strategy</span>
-        <span>AI &amp; Automation</span>
-        <span>eCommerce Support</span>
-        <span>Company Formation</span>
-        <span>Einzelfirma · GmbH · International</span>
+        <span data-i18n="marq.online">Online-Marketing &amp; Wachstum</span>
+        <span data-i18n="marq.web">Web- &amp; Tech-Services</span>
+        <span data-i18n="marq.content">Content &amp; Branding</span>
+        <span data-i18n="marq.consulting">Beratung &amp; Strategie</span>
+        <span data-i18n="marq.ai">KI &amp; Automatisierung</span>
+        <span data-i18n="marq.ecom">eCommerce-Support</span>
+        <span data-i18n="marq.formation">Firmengründung</span>
+        <span data-i18n="marq.legal">Einzelfirma · GmbH · International</span>
       </div>
     </div>
 
@@ -137,13 +142,11 @@
       <div class="container">
         <header class="section-head">
           <div data-reveal>
-            <span class="eyebrow">What we do · 01</span>
-            <h2 style="margin-top: 16px;">Seven domains.<br/>One digital partner.</h2>
+            <span class="eyebrow" data-i18n="svc.eyebrow">Was wir tun · 01</span>
+            <h2 style="margin-top: 16px;" data-i18n="svc.title">Sieben Bereiche.<br/>Ein digitaler Partner.</h2>
           </div>
-          <p class="lead" data-reveal>
-            Everything DBG offers across <em style="color: var(--text); font-style: normal;">seven domains</em>
-            &mdash; from marketing and web to AI, automation and company formation
-            &mdash; for private individuals and businesses, in Switzerland and abroad.
+          <p class="lead" data-reveal data-i18n="svc.lead">
+            Alles, was DBG in <em style="color: var(--text); font-style: normal;">sieben Bereichen</em> anbietet &mdash; von Marketing und Web bis hin zu KI, Automatisierung und Firmengründung &mdash; für Privatpersonen und Unternehmen, in der Schweiz und im Ausland.
           </p>
         </header>
 
@@ -151,24 +154,22 @@
           <li class="service" tabindex="0" aria-expanded="false">
             <div class="service__row">
               <span class="service__num">01</span>
-              <span class="service__title">Online Marketing &amp; Growth</span>
-              <span class="service__tags"><span>Social</span><span>Performance</span><span>SEO</span></span>
+              <span class="service__title" data-i18n="svc1.title">Online-Marketing &amp; Wachstum</span>
+              <span class="service__tags"><span data-i18n="svc1.tag1">Social</span><span data-i18n="svc1.tag2">Performance</span><span data-i18n="svc1.tag3">SEO</span></span>
               <span class="service__icon" aria-hidden="true">+</span>
             </div>
             <div class="service__detail">
               <div class="service__detail-inner">
                 <div class="service__detail-content">
-                  <p class="service__lede">
-                    Businesses always need new customers. We build the channels that bring
-                    them in &mdash; social, paid, search and email &mdash; wired together as
-                    one growth engine, not five disconnected tools.
+                  <p class="service__lede" data-i18n="svc1.lede">
+                    Unternehmen brauchen ständig neue Kundinnen und Kunden. Wir bauen die Kanäle, die sie liefern &mdash; Social, Paid, Search und E-Mail &mdash; als ein zusammenhängendes Wachstumssystem, nicht als fünf isolierte Tools.
                   </p>
                   <ul class="service__features">
-                    <li><span>Social media management</span></li>
-                    <li><span>Performance marketing &amp; ads</span></li>
-                    <li><span>SEO &amp; search visibility</span></li>
-                    <li><span>Email marketing &amp; funnels</span></li>
-                    <li><span>Conversion optimization</span></li>
+                    <li><span data-i18n="svc1.f1">Social-Media-Management</span></li>
+                    <li><span data-i18n="svc1.f2">Performance-Marketing &amp; Anzeigen</span></li>
+                    <li><span data-i18n="svc1.f3">SEO &amp; Sichtbarkeit in Suchmaschinen</span></li>
+                    <li><span data-i18n="svc1.f4">E-Mail-Marketing &amp; Funnels</span></li>
+                    <li><span data-i18n="svc1.f5">Conversion-Optimierung</span></li>
                   </ul>
                 </div>
               </div>
@@ -178,25 +179,23 @@
           <li class="service" tabindex="0" aria-expanded="false">
             <div class="service__row">
               <span class="service__num">02</span>
-              <span class="service__title">Web &amp; Tech Services</span>
-              <span class="service__tags"><span>Websites</span><span>eCommerce</span><span>No-code</span></span>
+              <span class="service__title" data-i18n="svc2.title">Web- &amp; Tech-Services</span>
+              <span class="service__tags"><span data-i18n="svc2.tag1">Websites</span><span data-i18n="svc2.tag2">eCommerce</span><span data-i18n="svc2.tag3">No-Code</span></span>
               <span class="service__icon" aria-hidden="true">+</span>
             </div>
             <div class="service__detail">
               <div class="service__detail-inner">
                 <div class="service__detail-content">
-                  <p class="service__lede">
-                    Nothing works without a digital infrastructure that actually works.
-                    Websites, shops, landing pages, automations and no-code stacks &mdash;
-                    built so your business can run, scale and catch up.
+                  <p class="service__lede" data-i18n="svc2.lede">
+                    Ohne eine funktionierende digitale Infrastruktur läuft nichts. Websites, Shops, Landingpages, Automationen und No-Code-Stacks &mdash; so gebaut, dass Ihr Unternehmen laufen, skalieren und aufholen kann.
                   </p>
                   <ul class="service__features">
-                    <li><span>Website development</span></li>
-                    <li><span>eCommerce &amp; online shops</span></li>
-                    <li><span>Landing pages</span></li>
-                    <li><span>Automations &amp; integrations</span></li>
-                    <li><span>No-code / low-code solutions</span></li>
-                    <li><span>Digital catch-up support for businesses</span></li>
+                    <li><span data-i18n="svc2.f1">Website-Entwicklung</span></li>
+                    <li><span data-i18n="svc2.f2">eCommerce &amp; Online-Shops</span></li>
+                    <li><span data-i18n="svc2.f3">Landingpages</span></li>
+                    <li><span data-i18n="svc2.f4">Automationen &amp; Integrationen</span></li>
+                    <li><span data-i18n="svc2.f5">No-Code- / Low-Code-Lösungen</span></li>
+                    <li><span data-i18n="svc2.f6">Digitale Aufholunterstützung für Unternehmen</span></li>
                   </ul>
                 </div>
               </div>
@@ -206,23 +205,21 @@
           <li class="service" tabindex="0" aria-expanded="false">
             <div class="service__row">
               <span class="service__num">03</span>
-              <span class="service__title">Content &amp; Branding</span>
-              <span class="service__tags"><span>Design</span><span>Video</span><span>Copy</span></span>
+              <span class="service__title" data-i18n="svc3.title">Content &amp; Branding</span>
+              <span class="service__tags"><span data-i18n="svc3.tag1">Design</span><span data-i18n="svc3.tag2">Video</span><span data-i18n="svc3.tag3">Text</span></span>
               <span class="service__icon" aria-hidden="true">+</span>
             </div>
             <div class="service__detail">
               <div class="service__detail-inner">
                 <div class="service__detail-content">
-                  <p class="service__lede">
-                    Knowing how to show up online &mdash; and looking the part when you do.
-                    Graphics, video, copy and a personal brand built around how your business
-                    actually wants to be seen.
+                  <p class="service__lede" data-i18n="svc3.lede">
+                    Wissen, wie man online auftritt &mdash; und dabei das passende Erscheinungsbild zeigt. Grafik, Video, Texte und eine persönliche Marke, die genau dem entspricht, wie Ihr Unternehmen wahrgenommen werden möchte.
                   </p>
                   <ul class="service__features">
-                    <li><span>Graphic design</span></li>
-                    <li><span>Video editing</span></li>
-                    <li><span>Copywriting</span></li>
-                    <li><span>Personal branding</span></li>
+                    <li><span data-i18n="svc3.f1">Grafikdesign</span></li>
+                    <li><span data-i18n="svc3.f2">Videoschnitt</span></li>
+                    <li><span data-i18n="svc3.f3">Copywriting</span></li>
+                    <li><span data-i18n="svc3.f4">Personal Branding</span></li>
                   </ul>
                 </div>
               </div>
@@ -232,23 +229,21 @@
           <li class="service" tabindex="0" aria-expanded="false">
             <div class="service__row">
               <span class="service__num">04</span>
-              <span class="service__title">Consulting &amp; Strategy</span>
-              <span class="service__tags"><span>Strategy</span><span>Funnels</span><span>Analysis</span></span>
+              <span class="service__title" data-i18n="svc4.title">Beratung &amp; Strategie</span>
+              <span class="service__tags"><span data-i18n="svc4.tag1">Strategie</span><span data-i18n="svc4.tag2">Funnels</span><span data-i18n="svc4.tag3">Analyse</span></span>
               <span class="service__icon" aria-hidden="true">+</span>
             </div>
             <div class="service__detail">
               <div class="service__detail-inner">
                 <div class="service__detail-content">
-                  <p class="service__lede">
-                    Sell your thinking, your experience and your results &mdash; not your
-                    time. Strategic advisory for digital transformation, business-model
-                    optimization, funnel strategy and market analysis.
+                  <p class="service__lede" data-i18n="svc4.lede">
+                    Verkaufen Sie Ihr Denken, Ihre Erfahrung und Ihre Ergebnisse &mdash; nicht Ihre Zeit. Strategische Beratung für digitale Transformation, Geschäftsmodelloptimierung, Funnel-Strategie und Marktanalyse.
                   </p>
                   <ul class="service__features">
-                    <li><span>Digitalization consulting</span></li>
-                    <li><span>Business-model optimization</span></li>
-                    <li><span>Funnel strategy</span></li>
-                    <li><span>Market analysis</span></li>
+                    <li><span data-i18n="svc4.f1">Digitalisierungsberatung</span></li>
+                    <li><span data-i18n="svc4.f2">Geschäftsmodelloptimierung</span></li>
+                    <li><span data-i18n="svc4.f3">Funnel-Strategie</span></li>
+                    <li><span data-i18n="svc4.f4">Marktanalyse</span></li>
                   </ul>
                 </div>
               </div>
@@ -258,24 +253,22 @@
           <li class="service" tabindex="0" aria-expanded="false">
             <div class="service__row">
               <span class="service__num">05</span>
-              <span class="service__title">AI &amp; Automation</span>
-              <span class="service__tags"><span>Workflows</span><span>AI Ops</span><span>Process</span></span>
+              <span class="service__title" data-i18n="svc5.title">KI &amp; Automatisierung</span>
+              <span class="service__tags"><span data-i18n="svc5.tag1">Workflows</span><span data-i18n="svc5.tag2">KI-Ops</span><span data-i18n="svc5.tag3">Prozesse</span></span>
               <span class="service__icon" aria-hidden="true">+</span>
             </div>
             <div class="service__detail">
               <div class="service__detail-inner">
                 <div class="service__detail-content">
-                  <p class="service__lede">
-                    Increase efficiency and remove manual effort. AI-driven workflows,
-                    automated customer communication and content pipelines &mdash; wired
-                    into the way your team already works.
+                  <p class="service__lede" data-i18n="svc5.lede">
+                    Effizienz steigern und manuellen Aufwand reduzieren. KI-gesteuerte Workflows, automatisierte Kundenkommunikation und Content-Pipelines &mdash; eingebunden in die Arbeitsweise Ihres Teams.
                   </p>
                   <ul class="service__features">
-                    <li><span>AI workflow setup</span></li>
-                    <li><span>Automated customer communication</span></li>
-                    <li><span>AI-optimized content creation</span></li>
-                    <li><span>Internal process automation</span></li>
-                    <li><span>Operational process optimization</span></li>
+                    <li><span data-i18n="svc5.f1">Einrichtung von KI-Workflows</span></li>
+                    <li><span data-i18n="svc5.f2">Automatisierte Kundenkommunikation</span></li>
+                    <li><span data-i18n="svc5.f3">KI-optimierte Content-Erstellung</span></li>
+                    <li><span data-i18n="svc5.f4">Automatisierung interner Prozesse</span></li>
+                    <li><span data-i18n="svc5.f5">Optimierung operativer Prozesse</span></li>
                   </ul>
                 </div>
               </div>
@@ -285,23 +278,21 @@
           <li class="service" tabindex="0" aria-expanded="false">
             <div class="service__row">
               <span class="service__num">06</span>
-              <span class="service__title">eCommerce Support</span>
-              <span class="service__tags"><span>Shops</span><span>CRO</span><span>Ads</span></span>
+              <span class="service__title" data-i18n="svc6.title">eCommerce-Support</span>
+              <span class="service__tags"><span data-i18n="svc6.tag1">Shops</span><span data-i18n="svc6.tag2">CRO</span><span data-i18n="svc6.tag3">Anzeigen</span></span>
               <span class="service__icon" aria-hidden="true">+</span>
             </div>
             <div class="service__detail">
               <div class="service__detail-inner">
                 <div class="service__detail-content">
-                  <p class="service__lede">
-                    Online shops keep booming &mdash; and so does the work behind them.
-                    Product pages that convert, ads that scale, and dropshipping setups
-                    built on real fundamentals, not templates.
+                  <p class="service__lede" data-i18n="svc6.lede">
+                    Online-Shops boomen weiter &mdash; und damit auch die Arbeit dahinter. Produktseiten, die konvertieren, Anzeigen, die skalieren, und Dropshipping-Setups, die auf echten Grundlagen aufbauen &mdash; nicht auf Templates.
                   </p>
                   <ul class="service__features">
-                    <li><span>Product page optimization</span></li>
-                    <li><span>Conversion-rate optimization</span></li>
-                    <li><span>Ads for online shops</span></li>
-                    <li><span>Dropshipping setups</span></li>
+                    <li><span data-i18n="svc6.f1">Optimierung von Produktseiten</span></li>
+                    <li><span data-i18n="svc6.f2">Conversion-Rate-Optimierung</span></li>
+                    <li><span data-i18n="svc6.f3">Anzeigen für Online-Shops</span></li>
+                    <li><span data-i18n="svc6.f4">Dropshipping-Setups</span></li>
                   </ul>
                 </div>
               </div>
@@ -311,24 +302,22 @@
           <li class="service" tabindex="0" aria-expanded="false">
             <div class="service__row">
               <span class="service__num">07</span>
-              <span class="service__title">Company Formation</span>
-              <span class="service__tags"><span>Einzelfirma</span><span>GmbH</span><span>International</span></span>
+              <span class="service__title" data-i18n="svc7.title">Firmengründung</span>
+              <span class="service__tags"><span data-i18n="svc7.tag1">Einzelfirma</span><span data-i18n="svc7.tag2">GmbH</span><span data-i18n="svc7.tag3">International</span></span>
               <span class="service__icon" aria-hidden="true">+</span>
             </div>
             <div class="service__detail">
               <div class="service__detail-inner">
                 <div class="service__detail-content">
-                  <p class="service__lede">
-                    When, if not now? End-to-end support for setting up a sole proprietorship
-                    (Einzelfirma), a limited-liability company (GmbH) or an online business
-                    &mdash; including real-estate search and company formation abroad.
+                  <p class="service__lede" data-i18n="svc7.lede">
+                    Wenn nicht jetzt, wann dann? Komplette Begleitung bei der Gründung einer Einzelfirma, einer GmbH oder eines Online-Unternehmens &mdash; inklusive Immobiliensuche und Firmengründung im Ausland.
                   </p>
                   <ul class="service__features">
-                    <li><span>Sole proprietorship (Einzelfirma) setup</span></li>
-                    <li><span>Limited-liability (GmbH) setup</span></li>
-                    <li><span>Online business formation</span></li>
-                    <li><span>Real-estate search support</span></li>
-                    <li><span>Company formation abroad</span></li>
+                    <li><span data-i18n="svc7.f1">Gründung einer Einzelfirma</span></li>
+                    <li><span data-i18n="svc7.f2">Gründung einer GmbH</span></li>
+                    <li><span data-i18n="svc7.f3">Gründung eines Online-Unternehmens</span></li>
+                    <li><span data-i18n="svc7.f4">Unterstützung bei der Immobiliensuche</span></li>
+                    <li><span data-i18n="svc7.f5">Firmengründung im Ausland</span></li>
                   </ul>
                 </div>
               </div>
@@ -337,13 +326,12 @@
         </ul>
 
         <div class="services__outro" data-reveal>
-          <p class="services__outro-text">
-            Whatever stage you&rsquo;re at &mdash; or wherever you&rsquo;re stuck &mdash;
-            request a <em>non-binding offer</em>.
+          <p class="services__outro-text" data-i18n="svc.outro.text">
+            Egal, an welchem Punkt Sie stehen &mdash; oder wo es gerade hakt &mdash; fordern Sie ein <em>unverbindliches Angebot</em> an.
           </p>
           <div class="services__outro-ctas">
             <a class="btn btn--primary" href="pages/contact.html">
-              Request a non-binding offer
+              <span data-i18n="svc.outro.cta">Unverbindliches Angebot anfordern</span>
               <span class="arrow" aria-hidden="true">→</span>
             </a>
             <a class="cta__email" href="mailto:contact@digital-business-mg.com">
@@ -360,43 +348,33 @@
       <div class="container">
         <header class="about__head">
           <div data-reveal>
-            <span class="eyebrow">About us · 03</span>
-            <h2 class="about__title">
-              A digital studio<br/>
-              built around <em>your growth</em>.
+            <span class="eyebrow" data-i18n="about.eyebrow">Über uns · 03</span>
+            <h2 class="about__title" data-i18n="about.title">
+              Ein Digital-Studio,<br/>
+              aufgebaut um <em>Ihr Wachstum</em>.
             </h2>
           </div>
-          <p class="about__kicker" data-reveal>
-            Digitalization isn&rsquo;t a trend &mdash; it&rsquo;s a tool for creating
-            real value. That&rsquo;s exactly what we stand for: clear, efficient
-            and future-oriented.
+          <p class="about__kicker" data-reveal data-i18n="about.kicker">
+            Digitalisierung ist kein Trend &mdash; sondern ein Werkzeug, um echten Mehrwert zu schaffen. Genau dafür stehen wir: klar, effizient und zukunftsorientiert.
           </p>
         </header>
 
         <div class="about__grid">
           <div class="about__lead" data-reveal>
-            <p>
-              <strong>Digital Business Grgic</strong> is a modern digital business with
-              one clear goal &mdash; to help other companies grow successfully in the
-              digital world.
+            <p data-i18n="about.lead.p1">
+              <strong>Digital Business Grgic</strong> ist ein modernes digitales Unternehmen mit einem klaren Ziel &mdash; anderen Unternehmen zu helfen, in der digitalen Welt erfolgreich zu wachsen.
             </p>
-            <p>
-              As a Swiss sole proprietorship we combine flexibility, personal attention
-              and deep know-how to deliver tailor-made solutions that actually work.
+            <p data-i18n="about.lead.p2">
+              Als Schweizer Einzelunternehmen verbinden wir Flexibilität, persönliche Betreuung und tiefes Know-how, um massgeschneiderte Lösungen zu liefern, die wirklich funktionieren.
             </p>
           </div>
 
           <div class="about__body" data-reveal>
-            <p>
-              Our focus is making digital opportunities tangible &mdash; from strategic
-              planning to concrete execution. Whether it&rsquo;s online marketing,
-              web solutions, content creation or automation, we help our clients
-              increase visibility, optimize processes and achieve sustainable results.
+            <p data-i18n="about.body.p1">
+              Unser Fokus liegt darauf, digitale Möglichkeiten greifbar zu machen &mdash; von der strategischen Planung bis zur konkreten Umsetzung. Ob Online-Marketing, Web-Lösungen, Content-Erstellung oder Automatisierung &mdash; wir helfen unseren Kundinnen und Kunden, Sichtbarkeit zu erhöhen, Prozesse zu optimieren und nachhaltige Ergebnisse zu erzielen.
             </p>
-            <p>
-              What makes us different is the close collaboration with our clients.
-              We listen, we understand individual goals, and we develop solutions that
-              aren&rsquo;t just technically sound &mdash; they also make economic sense.
+            <p data-i18n="about.body.p2">
+              Was uns auszeichnet, ist die enge Zusammenarbeit mit unseren Kundinnen und Kunden. Wir hören zu, verstehen individuelle Ziele und entwickeln Lösungen, die nicht nur technisch sauber sind &mdash; sondern auch wirtschaftlich Sinn ergeben.
             </p>
           </div>
         </div>
@@ -404,50 +382,50 @@
         <ul class="about__values" data-reveal>
           <li>
             <span class="about__value-num">01</span>
-            <h6>Flexibility</h6>
-            <p>A small studio that adapts to your scale &mdash; not the other way around.</p>
+            <h6 data-i18n="about.v1.h">Flexibilität</h6>
+            <p data-i18n="about.v1.p">Ein kleines Studio, das sich an Ihre Grösse anpasst &mdash; und nicht umgekehrt.</p>
           </li>
           <li>
             <span class="about__value-num">02</span>
-            <h6>Personal attention</h6>
-            <p>You work directly with our team. No account managers, no handoffs.</p>
+            <h6 data-i18n="about.v2.h">Persönliche Betreuung</h6>
+            <p data-i18n="about.v2.p">Sie arbeiten direkt mit unserem Team. Keine Account-Manager, keine Übergaben.</p>
           </li>
           <li>
             <span class="about__value-num">03</span>
-            <h6>Deep know-how</h6>
-            <p>Strategy, web, content and automation under one accountable roof.</p>
+            <h6 data-i18n="about.v3.h">Tiefes Know-how</h6>
+            <p data-i18n="about.v3.p">Strategie, Web, Content und Automatisierung &mdash; verantwortlich unter einem Dach.</p>
           </li>
           <li>
             <span class="about__value-num">04</span>
-            <h6>Tailor-made</h6>
-            <p>Solutions built for your goal &mdash; not pulled from a template library.</p>
+            <h6 data-i18n="about.v4.h">Massgeschneidert</h6>
+            <p data-i18n="about.v4.p">Lösungen, die für Ihr Ziel gebaut sind &mdash; und nicht aus einer Vorlagenbibliothek stammen.</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- ============ MARQUEE / VALUES (between About & Approach) ============ -->
+    <!-- ============ MARQUEE / VALUES ============ -->
     <div class="marquee marquee--reverse" aria-hidden="true">
       <div class="marquee__track">
-        <span>Clear · Klar</span>
-        <span>Efficient · Effizient</span>
-        <span>Future-oriented · Zukunftsorientiert</span>
-        <span>Tailor-made · Massgeschneidert</span>
-        <span>Switzerland · EU · International</span>
-        <span>EN · DE</span>
-        <span>Available 2026</span>
+        <span data-i18n="marq2.clear">Klar</span>
+        <span data-i18n="marq2.efficient">Effizient</span>
+        <span data-i18n="marq2.future">Zukunftsorientiert</span>
+        <span data-i18n="marq2.tailor">Massgeschneidert</span>
+        <span data-i18n="marq2.region">Schweiz · EU · International</span>
+        <span data-i18n="marq2.lang">DE · EN</span>
+        <span data-i18n="marq2.available">Verfügbar 2026</span>
         <!-- duplicate for seamless loop -->
-        <span>Clear · Klar</span>
-        <span>Efficient · Effizient</span>
-        <span>Future-oriented · Zukunftsorientiert</span>
-        <span>Tailor-made · Massgeschneidert</span>
-        <span>Switzerland · EU · International</span>
-        <span>EN · DE</span>
-        <span>Available 2026</span>
+        <span data-i18n="marq2.clear">Klar</span>
+        <span data-i18n="marq2.efficient">Effizient</span>
+        <span data-i18n="marq2.future">Zukunftsorientiert</span>
+        <span data-i18n="marq2.tailor">Massgeschneidert</span>
+        <span data-i18n="marq2.region">Schweiz · EU · International</span>
+        <span data-i18n="marq2.lang">DE · EN</span>
+        <span data-i18n="marq2.available">Verfügbar 2026</span>
       </div>
     </div>
 
-    <!-- ============ APPROACH (scroll-pinned carousel) ============ -->
+    <!-- ============ APPROACH ============ -->
     <section class="approach approach--pin" id="approach">
       <div class="approach__pin-wrap">
         <div class="approach__pin-stage">
@@ -456,14 +434,12 @@
             <div class="approach__grid">
 
               <div class="approach__intro">
-                <span class="eyebrow">How we work · 04</span>
-                <h2 class="approach__title" style="margin-top: 24px;">
-                  A small studio.<br/>A senior process.
+                <span class="eyebrow" data-i18n="app.eyebrow">Wie wir arbeiten · 04</span>
+                <h2 class="approach__title" style="margin-top: 24px;" data-i18n="app.title">
+                  Ein kleines Studio.<br/>Ein Senior-Prozess.
                 </h2>
-                <p>
-                  You work directly with us &mdash; one accountable team from first
-                  call to final delivery. No account managers, no handoffs,
-                  no surprises in the invoice.
+                <p data-i18n="app.intro">
+                  Sie arbeiten direkt mit uns &mdash; ein verantwortliches Team vom ersten Gespräch bis zur finalen Lieferung. Keine Account-Manager, keine Übergaben, keine Überraschungen auf der Rechnung.
                 </p>
               </div>
 
@@ -481,120 +457,108 @@
 
                   <article class="approach__card is-active" data-step="0">
                     <header class="approach__card-head">
-                      <span class="approach__card-meta">Step 01 <span>· 05</span></span>
-                      <h3 class="approach__card-title">Discovery call</h3>
+                      <span class="approach__card-meta" data-i18n="app.s1.meta">Schritt 01 <span>· 05</span></span>
+                      <h3 class="approach__card-title" data-i18n="app.s1.title">Discovery-Gespräch</h3>
                     </header>
-                    <p class="approach__card-body">
-                      A focused 30-minute conversation about your goal, your audience
-                      and the constraint that&rsquo;s actually slowing things down.
-                      We come prepared with questions, you bring the context &mdash;
-                      and we leave with a shared definition of success.
+                    <p class="approach__card-body" data-i18n="app.s1.body">
+                      Ein fokussiertes 30-minütiges Gespräch über Ihr Ziel, Ihre Zielgruppe und den Engpass, der wirklich bremst. Wir kommen vorbereitet mit Fragen, Sie bringen den Kontext mit &mdash; und am Ende des Gesprächs steht eine gemeinsame Definition von Erfolg.
                     </p>
                     <div class="approach__card-includes">
-                      <h6>What we cover</h6>
+                      <h6 data-i18n="app.s1.h6">Was wir besprechen</h6>
                       <ul>
-                        <li><span>The current state of your digital setup</span></li>
-                        <li><span>Where the friction actually lives</span></li>
-                        <li><span>The outcome that defines success</span></li>
+                        <li><span data-i18n="app.s1.l1">Der aktuelle Stand Ihres digitalen Setups</span></li>
+                        <li><span data-i18n="app.s1.l2">Wo es tatsächlich hakt</span></li>
+                        <li><span data-i18n="app.s1.l3">Das Ergebnis, das Erfolg definiert</span></li>
                       </ul>
                     </div>
                     <footer class="approach__card-foot">
-                      <span>Duration<strong>30 min</strong></span>
-                      <span>Format<strong>Remote · video call</strong></span>
-                      <span>Outcome<strong>Shared brief</strong></span>
+                      <span data-i18n="app.s1.foot1">Dauer<strong>30 Min</strong></span>
+                      <span data-i18n="app.s1.foot2">Format<strong>Remote · Videocall</strong></span>
+                      <span data-i18n="app.s1.foot3">Ergebnis<strong>Gemeinsames Briefing</strong></span>
                     </footer>
                   </article>
 
                   <article class="approach__card" data-step="1">
                     <header class="approach__card-head">
-                      <span class="approach__card-meta">Step 02 <span>· 05</span></span>
-                      <h3 class="approach__card-title">Scope &amp; quote</h3>
+                      <span class="approach__card-meta" data-i18n="app.s2.meta">Schritt 02 <span>· 05</span></span>
+                      <h3 class="approach__card-title" data-i18n="app.s2.title">Scope &amp; Offerte</h3>
                     </header>
-                    <p class="approach__card-body">
-                      A written proposal with a fixed timeline, a fixed price and the
-                      success metric we&rsquo;ll measure against &mdash; before the
-                      first invoice is ever sent. No surprises later.
+                    <p class="approach__card-body" data-i18n="app.s2.body">
+                      Ein schriftliches Angebot mit fixem Zeitplan, fixem Preis und der Erfolgsmetrik, an der wir uns messen lassen &mdash; bevor die erste Rechnung verschickt wird. Keine Überraschungen im Nachhinein.
                     </p>
                     <div class="approach__card-includes">
-                      <h6>What you receive</h6>
+                      <h6 data-i18n="app.s2.h6">Was Sie erhalten</h6>
                       <ul>
-                        <li><span>Detailed scope of work</span></li>
-                        <li><span>Fixed-price quote in CHF</span></li>
-                        <li><span>Timeline with named milestones</span></li>
+                        <li><span data-i18n="app.s2.l1">Detaillierter Leistungsumfang</span></li>
+                        <li><span data-i18n="app.s2.l2">Festpreis-Angebot in CHF</span></li>
+                        <li><span data-i18n="app.s2.l3">Zeitplan mit benannten Meilensteinen</span></li>
                       </ul>
                     </div>
                     <footer class="approach__card-foot">
-                      <span>Delivery<strong>3&ndash;5 days</strong></span>
-                      <span>Format<strong>Written brief</strong></span>
-                      <span>Validity<strong>14 days</strong></span>
+                      <span data-i18n="app.s2.foot1">Lieferung<strong>3&ndash;5 Tage</strong></span>
+                      <span data-i18n="app.s2.foot2">Format<strong>Schriftliches Briefing</strong></span>
+                      <span data-i18n="app.s2.foot3">Gültigkeit<strong>14 Tage</strong></span>
                     </footer>
                   </article>
 
                   <article class="approach__card" data-step="2">
                     <header class="approach__card-head">
-                      <span class="approach__card-meta">Step 03 <span>· 05</span></span>
-                      <h3 class="approach__card-title">Design &amp; build</h3>
+                      <span class="approach__card-meta" data-i18n="app.s3.meta">Schritt 03 <span>· 05</span></span>
+                      <h3 class="approach__card-title" data-i18n="app.s3.title">Design &amp; Umsetzung</h3>
                     </header>
-                    <p class="approach__card-body">
-                      Weekly check-ins, a live preview link from day one, and a build
-                      that ships on schedule. You see the work as it happens &mdash;
-                      not a black box and a launch reveal.
+                    <p class="approach__card-body" data-i18n="app.s3.body">
+                      Wöchentliche Check-ins, ein Live-Vorschau-Link ab Tag eins und ein Build, der pünktlich liefert. Sie sehen die Arbeit, während sie entsteht &mdash; keine Blackbox und kein Überraschungs-Launch.
                     </p>
                     <div class="approach__card-includes">
-                      <h6>What you get</h6>
+                      <h6 data-i18n="app.s3.h6">Was Sie bekommen</h6>
                       <ul>
-                        <li><span>Live preview link from week one</span></li>
-                        <li><span>Weekly progress notes &amp; calls</span></li>
-                        <li><span>Source, assets &amp; full ownership</span></li>
+                        <li><span data-i18n="app.s3.l1">Live-Vorschau-Link ab Woche eins</span></li>
+                        <li><span data-i18n="app.s3.l2">Wöchentliche Fortschrittsnotizen &amp; Calls</span></li>
+                        <li><span data-i18n="app.s3.l3">Quellcode, Assets &amp; vollständiges Eigentum</span></li>
                       </ul>
                     </div>
                     <footer class="approach__card-foot">
-                      <span>Cadence<strong>Weekly</strong></span>
-                      <span>Visibility<strong>Live preview</strong></span>
-                      <span>Ownership<strong>Yours</strong></span>
+                      <span data-i18n="app.s3.foot1">Rhythmus<strong>Wöchentlich</strong></span>
+                      <span data-i18n="app.s3.foot2">Sichtbarkeit<strong>Live-Vorschau</strong></span>
+                      <span data-i18n="app.s3.foot3">Eigentum<strong>Bei Ihnen</strong></span>
                     </footer>
                   </article>
 
                   <article class="approach__card" data-step="3">
                     <header class="approach__card-head">
-                      <span class="approach__card-meta">Step 04 <span>· 05</span></span>
-                      <h3 class="approach__card-title">Launch &amp; iterate</h3>
+                      <span class="approach__card-meta" data-i18n="app.s4.meta">Schritt 04 <span>· 05</span></span>
+                      <h3 class="approach__card-title" data-i18n="app.s4.title">Launch &amp; Iteration</h3>
                     </header>
-                    <p class="approach__card-body">
-                      We don&rsquo;t disappear after launch. Analytics setup, the first
-                      round of iterations and a clear roadmap for what&rsquo;s next
-                      &mdash; together, on a cadence that fits your business.
+                    <p class="approach__card-body" data-i18n="app.s4.body">
+                      Wir verschwinden nach dem Launch nicht. Analytics-Setup, die erste Iterationsrunde und eine klare Roadmap für die nächsten Schritte &mdash; gemeinsam, in einem Rhythmus, der zu Ihrem Unternehmen passt.
                     </p>
                     <div class="approach__card-includes">
-                      <h6>What&rsquo;s included</h6>
+                      <h6 data-i18n="app.s4.h6">Was enthalten ist</h6>
                       <ul>
-                        <li><span>Analytics &amp; monitoring setup</span></li>
-                        <li><span>30-day post-launch iteration window</span></li>
-                        <li><span>Roadmap for the next milestone</span></li>
+                        <li><span data-i18n="app.s4.l1">Analytics- &amp; Monitoring-Setup</span></li>
+                        <li><span data-i18n="app.s4.l2">30-Tage-Iterationsfenster nach dem Launch</span></li>
+                        <li><span data-i18n="app.s4.l3">Roadmap für den nächsten Meilenstein</span></li>
                       </ul>
                     </div>
                     <footer class="approach__card-foot">
-                      <span>Window<strong>30+ days</strong></span>
-                      <span>Cadence<strong>Ongoing</strong></span>
-                      <span>Outcome<strong>Compounding</strong></span>
+                      <span data-i18n="app.s4.foot1">Fenster<strong>30+ Tage</strong></span>
+                      <span data-i18n="app.s4.foot2">Rhythmus<strong>Laufend</strong></span>
+                      <span data-i18n="app.s4.foot3">Ergebnis<strong>Wachsend</strong></span>
                     </footer>
                   </article>
 
                   <article class="approach__card approach__card--cta" data-step="4">
                     <header class="approach__card-head">
-                      <span class="approach__card-meta">Step 05 <span>· 05</span></span>
-                      <h3 class="approach__card-title">Let&rsquo;s <em>start</em> now.</h3>
+                      <span class="approach__card-meta" data-i18n="app.s5.meta">Schritt 05 <span>· 05</span></span>
+                      <h3 class="approach__card-title" data-i18n="app.s5.title">Lassen Sie uns <em>jetzt</em> starten.</h3>
                     </header>
-                    <p class="approach__card-body">
-                      Every step above begins with one short conversation. Book a
-                      30-minute discovery call &mdash; no pitch deck, no obligation.
-                      We listen, you talk, and you leave knowing whether DBG is the
-                      right partner for what you&rsquo;re building.
+                    <p class="approach__card-body" data-i18n="app.s5.body">
+                      Jeder Schritt oben beginnt mit einem kurzen Gespräch. Buchen Sie ein 30-minütiges Discovery-Gespräch &mdash; ohne Pitch-Deck, ohne Verpflichtung. Wir hören zu, Sie sprechen, und am Ende wissen Sie, ob DBG der richtige Partner für Ihr Vorhaben ist.
                     </p>
                     <div class="approach__card-cta-block">
-                      <h6>Ready when you are</h6>
+                      <h6 data-i18n="app.s5.h6">Bereit, wenn Sie es sind</h6>
                       <a class="btn btn--primary" href="pages/contact.html">
-                        Book a discovery call
+                        <span data-i18n="app.s5.cta">Discovery-Gespräch buchen</span>
                         <span class="arrow" aria-hidden="true">→</span>
                       </a>
                       <a class="cta__email" href="mailto:contact@digital-business-mg.com">
@@ -603,9 +567,9 @@
                       </a>
                     </div>
                     <footer class="approach__card-foot">
-                      <span>Reply<strong>≤ 1 business day</strong></span>
-                      <span>Languages<strong>EN · DE</strong></span>
-                      <span>Region<strong>CH · EU · INT</strong></span>
+                      <span data-i18n="app.s5.foot1">Antwort<strong>≤ 1 Werktag</strong></span>
+                      <span data-i18n="app.s5.foot2">Sprachen<strong>DE · EN</strong></span>
+                      <span data-i18n="app.s5.foot3">Region<strong>CH · EU · INT</strong></span>
                     </footer>
                   </article>
 
@@ -626,22 +590,19 @@
       </div>
 
       <div class="container cta__inner">
-        <span class="eyebrow" data-reveal>Get in touch · 05</span>
+        <span class="eyebrow" data-reveal data-i18n="cta.eyebrow">Kontakt aufnehmen · 05</span>
 
-        <h2 class="cta__title" data-reveal>
-          Tell us what you&rsquo;re <em>building</em>.
+        <h2 class="cta__title" data-reveal data-i18n="cta.title">
+          Erzählen Sie uns, was Sie <em>aufbauen</em>.
         </h2>
 
-        <p class="cta__lede" data-reveal>
-          Wherever you&rsquo;re stuck, or wondering what&rsquo;s next &mdash;
-          request a <strong>non-binding offer</strong>.
-          Replies within one business day. No templates, no pitch decks &mdash;
-          every project starts with a real conversation.
+        <p class="cta__lede" data-reveal data-i18n="cta.lede">
+          Wo immer es hakt, oder wenn Sie sich fragen, was als Nächstes kommt &mdash; fordern Sie ein <strong>unverbindliches Angebot</strong> an. Antworten innerhalb eines Werktags. Keine Vorlagen, keine Pitch-Decks &mdash; jedes Projekt beginnt mit einem echten Gespräch.
         </p>
 
         <div class="cta__ctas" data-reveal>
           <a class="btn btn--primary cta__primary" href="pages/contact.html">
-            Start a project
+            <span data-i18n="cta.primary">Projekt starten</span>
             <span class="arrow" aria-hidden="true">→</span>
           </a>
           <a class="cta__email" href="mailto:contact@digital-business-mg.com">
@@ -652,40 +613,39 @@
 
         <ul class="cta__info" data-reveal>
           <li>
-            <small>Region</small>
-            <strong>CH · EU · International</strong>
+            <small data-i18n="cta.info.region">Region</small>
+            <strong data-i18n="cta.info.region.value">CH · EU · International</strong>
           </li>
           <li>
-            <small>Languages</small>
-            <strong>EN · DE</strong>
+            <small data-i18n="cta.info.lang">Sprachen</small>
+            <strong data-i18n="cta.info.lang.value">DE · EN</strong>
           </li>
           <li>
-            <small>Reply time</small>
-            <strong>≤ 1 business day</strong>
+            <small data-i18n="cta.info.reply">Antwortzeit</small>
+            <strong data-i18n="cta.info.reply.value">≤ 1 Werktag</strong>
           </li>
           <li>
-            <small>Studio</small>
-            <strong>Feldstrasse 14<br/>CH-5415 Nussbaumen</strong>
+            <small data-i18n="cta.info.studio">Studio</small>
+            <strong data-i18n="cta.info.studio.value">Feldstrasse 14<br/>CH-5415 Nussbaumen</strong>
           </li>
         </ul>
 
         <div class="cta__divider" aria-hidden="true">
-          <span>What we can help you with</span>
+          <span data-i18n="cta.divider">Womit wir Ihnen helfen können</span>
         </div>
 
         <ul class="cta__chips" data-reveal>
-          <li><a href="#services">Online Marketing &amp; Growth</a></li>
-          <li><a href="#services">Web &amp; Tech Services</a></li>
-          <li><a href="#services">Content &amp; Branding</a></li>
-          <li><a href="#services">Consulting &amp; Strategy</a></li>
-          <li><a href="#services">AI &amp; Automation</a></li>
-          <li><a href="#services">eCommerce Support</a></li>
-          <li><a href="#services">Company Formation</a></li>
+          <li><a href="#services" data-i18n="svc1.title">Online-Marketing &amp; Wachstum</a></li>
+          <li><a href="#services" data-i18n="svc2.title">Web- &amp; Tech-Services</a></li>
+          <li><a href="#services" data-i18n="svc3.title">Content &amp; Branding</a></li>
+          <li><a href="#services" data-i18n="svc4.title">Beratung &amp; Strategie</a></li>
+          <li><a href="#services" data-i18n="svc5.title">KI &amp; Automatisierung</a></li>
+          <li><a href="#services" data-i18n="svc6.title">eCommerce-Support</a></li>
+          <li><a href="#services" data-i18n="svc7.title">Firmengründung</a></li>
         </ul>
 
-        <p class="cta__footnote" data-reveal>
-          Digital Business Grgic &mdash; a Swiss sole proprietorship operating
-          nationally and internationally.
+        <p class="cta__footnote" data-reveal data-i18n="cta.footnote">
+          Digital Business Grgic &mdash; ein Schweizer Einzelunternehmen, national und international tätig.
         </p>
       </div>
     </section>
@@ -697,24 +657,23 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <img src="/assets/logo-sm.webp" alt="Digital Business Grgic" width="56" height="56" />
-          <p>
-            A Swiss digital studio offering services for visibility, process
-            optimization and consulting &mdash; nationally and internationally.
+          <p data-i18n="foot.brand.p">
+            Ein Schweizer Digital-Studio mit Leistungen für Sichtbarkeit, Prozessoptimierung und Beratung &mdash; national und international.
           </p>
         </div>
 
         <div class="footer__col">
-          <h6>Studio</h6>
+          <h6 data-i18n="foot.col.studio">Studio</h6>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="/" data-i18n="nav.home">Startseite</a></li>
+            <li><a href="#services" data-i18n="nav.services">Leistungen</a></li>
+            <li><a href="#about" data-i18n="nav.about">Über uns</a></li>
+            <li><a href="pages/contact.html" data-i18n="nav.contact">Kontakt</a></li>
           </ul>
         </div>
 
         <div class="footer__col">
-          <h6>Contact</h6>
+          <h6 data-i18n="foot.col.contact">Kontakt</h6>
           <ul>
             <li><a href="mailto:contact@digital-business-mg.com">contact@digital-business-mg.com</a></li>
             <li>Feldstrasse 14<br/>CH-5415 Nussbaumen</li>
@@ -723,13 +682,19 @@
 
       </div>
 
+      <div class="footer__legal">
+        <a href="/assets/impressum.pdf" target="_blank" rel="noopener" class="footer__legal-btn" data-i18n="foot.legal.impressum">Impressum</a>
+        <a href="/assets/agb.pdf" target="_blank" rel="noopener" class="footer__legal-btn" data-i18n="foot.legal.agb">AGB</a>
+      </div>
+
       <div class="footer__bottom">
-        <span>© <span id="year">2026</span> Digital Business Grgic · All rights reserved</span>
+        <span data-i18n="foot.bottom.copy">© <span id="year">2026</span> Digital Business Grgic · Alle Rechte vorbehalten</span>
         <span>www.digital-business-mg.com</span>
       </div>
     </div>
   </footer>
 
+  <script src="/scripts/i18n.js" defer></script>
   <script src="/scripts/main.js" defer></script>
 </body>
 </html>

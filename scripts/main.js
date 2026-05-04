@@ -49,8 +49,12 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
   }
 
   /* 3. Year stamp */
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  const setYear = () => {
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  };
+  setYear();
+  document.addEventListener('langchange', setYear);
 
   /* 4. Service drawer — touch / keyboard fallback (hover handled by CSS) */
   const services = document.querySelectorAll('.service');
@@ -172,7 +176,14 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
     const calNavs = document.querySelectorAll('.cf-cal-nav');
     const slotBtns = document.querySelectorAll('.cf-slot');
 
-    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const MONTHS = {
+      de: ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
+      en: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+    };
+    const LOCALE_MAP = { de: 'de-CH', en: 'en-GB' };
+    const getLang = () => (window.DBG_I18N && window.DBG_I18N.getLang()) || document.documentElement.lang || 'de';
+    const T = (k) => (window.DBG_I18N ? window.DBG_I18N.t(k, getLang()) : '') || '';
+
     const today = new Date(); today.setHours(0,0,0,0);
     let viewYear = today.getFullYear();
     let viewMonth = today.getMonth();
@@ -183,15 +194,14 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
     const isoOf = (y, m, d) => y + '-' + pad(m + 1) + '-' + pad(d);
 
     const updateSubmitLabel = () => {
-      if (bookToggle && bookToggle.checked && selectedDate && selectedTime) {
-        submitLabel.textContent = 'Send & book call';
-      } else {
-        submitLabel.textContent = 'Send message';
-      }
+      if (!submitLabel) return;
+      const useBook = bookToggle && bookToggle.checked && selectedDate && selectedTime;
+      submitLabel.innerHTML = useBook ? T('cnt.submit.book') : T('cnt.submit.send');
     };
 
     const renderCalendar = () => {
-      calMonthLabel.textContent = monthNames[viewMonth] + ' ' + viewYear;
+      const lang = getLang();
+      calMonthLabel.textContent = MONTHS[lang][viewMonth] + ' ' + viewYear;
       calGrid.innerHTML = '';
 
       // Find weekday of the 1st (Mon=0..Sun=6)
@@ -225,7 +235,7 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
           if (btn.disabled) return;
           selectedDate = iso;
           dateInput.value = iso;
-          slotsDayLabel.textContent = date.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short' });
+          slotsDayLabel.textContent = date.toLocaleDateString(LOCALE_MAP[getLang()], { weekday: 'long', day: 'numeric', month: 'short' });
           slotsBox.hidden = false;
           calGrid.querySelectorAll('.cf-day').forEach((b) => b.classList.remove('is-selected'));
           btn.classList.add('is-selected');
@@ -244,6 +254,15 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
         updateSubmitLabel();
       });
     }
+
+    document.addEventListener('langchange', () => {
+      if (calRoot && !calRoot.hidden) renderCalendar();
+      if (selectedDate) {
+        const d = new Date(selectedDate + 'T00:00:00');
+        slotsDayLabel.textContent = d.toLocaleDateString(LOCALE_MAP[getLang()], { weekday: 'long', day: 'numeric', month: 'short' });
+      }
+      updateSubmitLabel();
+    });
 
     calNavs.forEach((nav) => {
       nav.addEventListener('click', () => {
@@ -281,19 +300,19 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
       const bTime = String(fd.get('booking_time') || '').trim();
 
       if (wantsBook && (!bDate || !bTime)) {
-        alert('Please pick a date and time for your call, or turn off the booking option.');
+        alert(T('js.alert.book'));
         return;
       }
 
-      const subjectBase = wantsBook ? 'Discovery call request' : 'Project inquiry';
+      const subjectBase = wantsBook ? T('js.subject.book') : T('js.subject.project');
       const subject = encodeURIComponent(subjectBase + (name ? ' — ' + name : ''));
       const lines = [
-        'Name: ' + name,
-        'Email: ' + email,
-        company ? 'Company: ' + company : null,
-        service ? 'Service: ' + service : null,
-        budget ? 'Budget: ' + budget : null,
-        wantsBook ? 'Booking: ' + bDate + ' at ' + bTime + ' (CET)' : null,
+        T('js.label.name') + ': ' + name,
+        T('js.label.email') + ': ' + email,
+        company ? T('js.label.company') + ': ' + company : null,
+        service ? T('js.label.service') + ': ' + service : null,
+        budget ? T('js.label.budget') + ': ' + budget : null,
+        wantsBook ? T('js.label.booking') + ': ' + bDate + ' / ' + bTime + ' (' + T('js.label.cet') + ')' : null,
         '',
         message,
       ].filter(Boolean);

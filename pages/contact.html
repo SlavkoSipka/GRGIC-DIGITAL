@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#050507" />
 
-  <title>Contact — Digital Business Grgic</title>
-  <meta name="description" content="Start a project or book a discovery call with Digital Business Grgic — Swiss digital studio." />
+  <title data-i18n="meta.title.contact">Kontakt — Digital Business Grgic</title>
+  <meta name="description" data-i18n-content="meta.desc.contact" content="Starten Sie ein Projekt oder buchen Sie ein Discovery-Gespräch mit Digital Business Grgic — Schweizer Digital-Studio." />
 
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,42 +24,48 @@
   </div>
 
   <header class="nav" id="nav">
-    <a class="nav__brand" href="../index.html" aria-label="Digital Business Grgic – home">
+    <a class="nav__brand" href="../index.html" data-i18n-aria-label="nav.brand.aria" aria-label="Digital Business Grgic – Startseite">
       <img src="../assets/logo-sm.webp" alt="" width="36" height="36" />
       <span>
         Digital Business Grgic
-        <small>Switzerland</small>
+        <small data-i18n="nav.brand.country">Schweiz</small>
       </span>
     </a>
 
-    <nav class="nav__links" aria-label="Primary">
-      <a href="../index.html">Home</a>
-      <a href="../index.html#services">Services</a>
-      <a href="../index.html#about">About</a>
-      <a href="contact.html" aria-current="page">Contact</a>
+    <nav class="nav__links" data-i18n-aria-label="nav.primary.aria" aria-label="Hauptnavigation">
+      <a href="../index.html" data-i18n="nav.home">Startseite</a>
+      <a href="../index.html#services" data-i18n="nav.services">Leistungen</a>
+      <a href="../index.html#about" data-i18n="nav.about">Über uns</a>
+      <a href="contact.html" aria-current="page" data-i18n="nav.contact">Kontakt</a>
     </nav>
 
-    <a class="btn btn--primary nav__cta" href="contact.html">Book a call</a>
+    <div class="nav__right">
+      <div class="lang-switch" role="group" data-i18n-aria-label="lang.switch.aria" aria-label="Sprache wechseln">
+        <button type="button" class="lang-switch__btn is-active" data-lang-switch="de" aria-pressed="true">DE</button>
+        <button type="button" class="lang-switch__btn" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
+
+      <a class="btn btn--primary nav__cta" href="contact.html" data-i18n="nav.cta">Gespräch buchen</a>
+    </div>
   </header>
 
   <main>
     <div class="container contact-grid">
 
       <aside class="contact-aside" data-reveal>
-        <span class="eyebrow">Contact · Get in touch</span>
-        <h1 class="contact-aside__title">
-          Let&rsquo;s talk about<br/>
-          what you&rsquo;re <em>building</em>.
+        <span class="eyebrow" data-i18n="cnt.aside.eyebrow">Kontakt · Kontakt aufnehmen</span>
+        <h1 class="contact-aside__title" data-i18n="cnt.aside.title">
+          Lassen Sie uns über das sprechen,<br/>
+          was Sie <em>aufbauen</em>.
         </h1>
-        <p class="contact-aside__lede">
-          Tell us a few details and pick a slot. We reply within one business day &mdash;
-          no templates, no handoff to a sales team.
+        <p class="contact-aside__lede" data-i18n="cnt.aside.lede">
+          Erzählen Sie uns ein paar Details und wählen Sie einen Termin. Wir antworten innerhalb eines Werktags &mdash; keine Vorlagen, keine Übergabe an ein Sales-Team.
         </p>
 
         <ul class="contact-aside__points">
-          <li><span>01</span><div><strong>Talk to our team</strong><small>You speak directly with the people scoping &amp; building.</small></div></li>
-          <li><span>02</span><div><strong>30&nbsp;min, no obligation</strong><small>A focused conversation, not a pitch.</small></div></li>
-          <li><span>03</span><div><strong>Languages</strong><small>English &middot; German</small></div></li>
+          <li><span>01</span><div><strong data-i18n="cnt.point1.h">Sprechen Sie direkt mit unserem Team</strong><small data-i18n="cnt.point1.s">Sie sprechen direkt mit den Personen, die scopen &amp; bauen.</small></div></li>
+          <li><span>02</span><div><strong data-i18n="cnt.point2.h">30&nbsp;Min, unverbindlich</strong><small data-i18n="cnt.point2.s">Ein fokussiertes Gespräch, kein Pitch.</small></div></li>
+          <li><span>03</span><div><strong data-i18n="cnt.point3.h">Sprachen</strong><small data-i18n="cnt.point3.s">Deutsch &middot; Englisch</small></div></li>
         </ul>
 
         <div class="contact-aside__direct">
@@ -67,7 +73,7 @@
             <span aria-hidden="true">✉</span>
             contact@digital-business-mg.com
           </a>
-          <small>Feldstrasse 14 &middot; CH-5415 Nussbaumen</small>
+          <small data-i18n="cnt.address">Feldstrasse 14 &middot; CH-5415 Nussbaumen</small>
         </div>
       </aside>
 
@@ -75,34 +81,34 @@
         <form id="contact-form" class="contact-form" action="#" method="post" novalidate>
           <div class="cf-row cf-row--two">
             <div class="field">
-              <label for="cf-name">Full name <span class="req">*</span></label>
-              <input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Your full name" />
+              <label for="cf-name"><span data-i18n="cnt.f.name">Vollständiger Name</span> <span class="req" data-i18n-title="cnt.req">*</span></label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required data-i18n-placeholder="cnt.f.name.ph" placeholder="Ihr vollständiger Name" />
             </div>
             <div class="field">
-              <label for="cf-email">Email <span class="req">*</span></label>
-              <input id="cf-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" />
+              <label for="cf-email"><span data-i18n="cnt.f.email">E-Mail</span> <span class="req" data-i18n-title="cnt.req">*</span></label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="cnt.f.email.ph" placeholder="name@unternehmen.ch" />
             </div>
           </div>
 
           <div class="cf-row cf-row--two">
             <div class="field">
-              <label for="cf-company">Company <span class="opt">optional</span></label>
-              <input id="cf-company" name="company" type="text" autocomplete="organization" placeholder="Your company / brand" />
+              <label for="cf-company"><span data-i18n="cnt.f.company">Unternehmen</span> <span class="opt" data-i18n="cnt.opt">optional</span></label>
+              <input id="cf-company" name="company" type="text" autocomplete="organization" data-i18n-placeholder="cnt.f.company.ph" placeholder="Ihr Unternehmen / Ihre Marke" />
             </div>
             <div class="field">
-              <label for="cf-service">Service of interest <span class="req">*</span></label>
+              <label for="cf-service"><span data-i18n="cnt.f.service">Gewünschte Leistung</span> <span class="req" data-i18n-title="cnt.req">*</span></label>
               <div class="select-wrap">
                 <select id="cf-service" name="service" required>
-                  <option value="" disabled selected>Choose a category…</option>
-                  <option value="digital-transformation">Digital Transformation</option>
-                  <option value="process-optimization">Process Optimization</option>
-                  <option value="websites">Websites &amp; Internet Presence</option>
-                  <option value="eshops">eShops &amp; eCommerce</option>
-                  <option value="listings">Listings &amp; Inserate</option>
-                  <option value="company-formation">Company Formation Support</option>
-                  <option value="online-consulting">Online Consulting</option>
-                  <option value="digital-tools">Digital Tools Sourcing</option>
-                  <option value="other">Other / Not sure yet</option>
+                  <option value="" disabled selected data-i18n="cnt.f.service.choose">Kategorie wählen…</option>
+                  <option value="digital-transformation" data-i18n="cnt.f.service.opt1">Digitale Transformation</option>
+                  <option value="process-optimization" data-i18n="cnt.f.service.opt2">Prozessoptimierung</option>
+                  <option value="websites" data-i18n="cnt.f.service.opt3">Websites &amp; Internetauftritt</option>
+                  <option value="eshops" data-i18n="cnt.f.service.opt4">Online-Shops &amp; eCommerce</option>
+                  <option value="listings" data-i18n="cnt.f.service.opt5">Inserate &amp; Listings</option>
+                  <option value="company-formation" data-i18n="cnt.f.service.opt6">Unterstützung bei der Firmengründung</option>
+                  <option value="online-consulting" data-i18n="cnt.f.service.opt7">Online-Beratung</option>
+                  <option value="digital-tools" data-i18n="cnt.f.service.opt8">Beschaffung digitaler Tools</option>
+                  <option value="other" data-i18n="cnt.f.service.opt9">Anderes / Noch unsicher</option>
                 </select>
                 <span class="select-wrap__chev" aria-hidden="true">▾</span>
               </div>
@@ -110,23 +116,23 @@
           </div>
 
           <div class="field">
-            <label for="cf-budget">Estimated budget <span class="opt">optional</span></label>
+            <label for="cf-budget"><span data-i18n="cnt.f.budget">Geschätztes Budget</span> <span class="opt" data-i18n="cnt.opt">optional</span></label>
             <div class="select-wrap">
               <select id="cf-budget" name="budget">
-                <option value="" disabled selected>Pick a range…</option>
-                <option value="lt-3k">&lt; CHF 3'000</option>
-                <option value="3-8k">CHF 3'000 — 8'000</option>
-                <option value="8-20k">CHF 8'000 — 20'000</option>
-                <option value="20k-plus">CHF 20'000+</option>
-                <option value="not-sure">Not sure yet</option>
+                <option value="" disabled selected data-i18n="cnt.f.budget.choose">Bereich wählen…</option>
+                <option value="lt-3k" data-i18n="cnt.f.budget.opt1">&lt; CHF 3'000</option>
+                <option value="3-8k" data-i18n="cnt.f.budget.opt2">CHF 3'000 — 8'000</option>
+                <option value="8-20k" data-i18n="cnt.f.budget.opt3">CHF 8'000 — 20'000</option>
+                <option value="20k-plus" data-i18n="cnt.f.budget.opt4">CHF 20'000+</option>
+                <option value="not-sure" data-i18n="cnt.f.budget.opt5">Noch unsicher</option>
               </select>
               <span class="select-wrap__chev" aria-hidden="true">▾</span>
             </div>
           </div>
 
           <div class="field">
-            <label for="cf-message">Project brief <span class="req">*</span></label>
-            <textarea id="cf-message" name="message" required placeholder="A few sentences about your goal, audience, current situation and timeline."></textarea>
+            <label for="cf-message"><span data-i18n="cnt.f.message">Projektbeschreibung</span> <span class="req" data-i18n-title="cnt.req">*</span></label>
+            <textarea id="cf-message" name="message" required data-i18n-placeholder="cnt.f.message.ph" placeholder="Ein paar Sätze zu Ihrem Ziel, Ihrer Zielgruppe, der aktuellen Situation und dem Zeitplan."></textarea>
           </div>
 
           <!-- Booking toggle -->
@@ -135,24 +141,24 @@
               <input id="cf-book" type="checkbox" name="book" />
               <span class="cf-toggle__track" aria-hidden="true"></span>
               <span class="cf-toggle__copy">
-                <strong>Book a 30-minute discovery call</strong>
-                <small>Pick a date &amp; time below — confirmed by email.</small>
+                <strong data-i18n="cnt.book.h">Ein 30-minütiges Discovery-Gespräch buchen</strong>
+                <small data-i18n="cnt.book.s">Datum &amp; Uhrzeit unten wählen — Bestätigung per E-Mail.</small>
               </span>
             </label>
 
             <div class="cf-calendar" id="cf-calendar" hidden>
               <div class="cf-cal-head">
-                <button type="button" class="cf-cal-nav" data-dir="-1" aria-label="Previous month">‹</button>
+                <button type="button" class="cf-cal-nav" data-dir="-1" data-i18n-aria-label="cnt.cal.prev" aria-label="Vorheriger Monat">‹</button>
                 <span class="cf-cal-month" id="cf-cal-month">—</span>
-                <button type="button" class="cf-cal-nav" data-dir="1" aria-label="Next month">›</button>
+                <button type="button" class="cf-cal-nav" data-dir="1" data-i18n-aria-label="cnt.cal.next" aria-label="Nächster Monat">›</button>
               </div>
               <div class="cf-cal-dows" aria-hidden="true">
-                <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+                <span data-i18n="cnt.cal.dow.mo">Mo</span><span data-i18n="cnt.cal.dow.tu">Di</span><span data-i18n="cnt.cal.dow.we">Mi</span><span data-i18n="cnt.cal.dow.th">Do</span><span data-i18n="cnt.cal.dow.fr">Fr</span><span data-i18n="cnt.cal.dow.sa">Sa</span><span data-i18n="cnt.cal.dow.su">So</span>
               </div>
               <div class="cf-cal-grid" id="cf-cal-grid" role="grid"></div>
 
               <div class="cf-slots" id="cf-slots" hidden>
-                <h6 class="cf-slots__title">Pick a time <small id="cf-slots-day">—</small></h6>
+                <h6 class="cf-slots__title"><span data-i18n="cnt.slots.title">Uhrzeit wählen</span> <small id="cf-slots-day">—</small></h6>
                 <div class="cf-slots__grid">
                   <button type="button" class="cf-slot" data-time="09:30">09:30</button>
                   <button type="button" class="cf-slot" data-time="11:00">11:00</button>
@@ -161,7 +167,7 @@
                   <button type="button" class="cf-slot" data-time="16:30">16:30</button>
                   <button type="button" class="cf-slot" data-time="18:00">18:00</button>
                 </div>
-                <small class="cf-slots__tz">All times in CET / Europe/Zurich</small>
+                <small class="cf-slots__tz" data-i18n="cnt.slots.tz">Alle Zeiten in MEZ / Europe/Zürich</small>
               </div>
 
               <input type="hidden" name="booking_date" id="cf-booking-date" />
@@ -171,10 +177,10 @@
 
           <div class="cf-submit">
             <button type="submit" class="btn btn--primary">
-              <span id="cf-submit-label">Send message</span>
+              <span id="cf-submit-label" data-i18n="cnt.submit.send">Nachricht senden</span>
               <span class="arrow" aria-hidden="true">→</span>
             </button>
-            <small>Or email us at <a href="mailto:contact@digital-business-mg.com">contact@digital-business-mg.com</a></small>
+            <small data-i18n="cnt.submit.email">Oder schreiben Sie uns an <a href="mailto:contact@digital-business-mg.com">contact@digital-business-mg.com</a></small>
           </div>
         </form>
       </section>
@@ -187,47 +193,43 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <img src="../assets/logo-sm.webp" alt="Digital Business Grgic" width="56" height="56" />
-          <p>
-            A Swiss digital studio offering services for visibility, process
-            optimization and consulting &mdash; nationally and internationally.
+          <p data-i18n="foot.brand.p">
+            Ein Schweizer Digital-Studio mit Leistungen für Sichtbarkeit, Prozessoptimierung und Beratung &mdash; national und international.
           </p>
         </div>
 
         <div class="footer__col">
-          <h6>Studio</h6>
+          <h6 data-i18n="foot.col.studio">Studio</h6>
           <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../index.html#services">Services</a></li>
-            <li><a href="../index.html#about">About</a></li>
-            <li><a href="contact.html" aria-current="page">Contact</a></li>
+            <li><a href="../index.html" data-i18n="nav.home">Startseite</a></li>
+            <li><a href="../index.html#services" data-i18n="nav.services">Leistungen</a></li>
+            <li><a href="../index.html#about" data-i18n="nav.about">Über uns</a></li>
+            <li><a href="contact.html" aria-current="page" data-i18n="nav.contact">Kontakt</a></li>
           </ul>
         </div>
 
         <div class="footer__col">
-          <h6>Contact</h6>
+          <h6 data-i18n="foot.col.contact">Kontakt</h6>
           <ul>
             <li><a href="mailto:contact@digital-business-mg.com">contact@digital-business-mg.com</a></li>
             <li>Feldstrasse 14<br/>CH-5415 Nussbaumen</li>
           </ul>
         </div>
+      </div>
 
-        <div class="footer__col">
-          <h6>Legal</h6>
-          <ul>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="agb.html">Terms (AGB)</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-          </ul>
-        </div>
+      <div class="footer__legal">
+        <a href="../assets/impressum.pdf" target="_blank" rel="noopener" class="footer__legal-btn" data-i18n="foot.legal.impressum">Impressum</a>
+        <a href="../assets/agb.pdf" target="_blank" rel="noopener" class="footer__legal-btn" data-i18n="foot.legal.agb">AGB</a>
       </div>
 
       <div class="footer__bottom">
-        <span>© <span id="year">2026</span> Digital Business Grgic · All rights reserved</span>
+        <span data-i18n="foot.bottom.copy">© <span id="year">2026</span> Digital Business Grgic · Alle Rechte vorbehalten</span>
         <span>www.digital-business-mg.com</span>
       </div>
     </div>
   </footer>
 
+  <script src="../scripts/i18n.js" defer></script>
   <script src="../scripts/main.js" defer></script>
 </body>
 </html>

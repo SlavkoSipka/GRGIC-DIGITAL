@@ -1775,12 +1775,16 @@ body.is-loaded .hero__scroll {
   line-height: 1.6;
   max-width: 46ch;
   align-self: start;
+  min-width: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .approach__card-includes {
   align-self: start;
   border-left: 1px solid var(--border);
   padding-left: var(--s-3);
+  min-width: 0;
 }
 .approach__card-includes h6 {
   font-family: var(--font-mono);
@@ -1817,13 +1821,19 @@ body.is-loaded .hero__scroll {
   grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-4);
+  column-gap: var(--s-4);
+  row-gap: 10px;
   padding-top: var(--s-3);
   border-top: 1px solid var(--border);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   color: var(--text-faint);
+}
+.approach__card-foot > span {
+  display: inline-flex;
+  align-items: baseline;
+  min-width: 0;
 }
 .approach__card-foot strong {
   color: var(--text);
@@ -1896,6 +1906,18 @@ body.is-loaded .hero__scroll {
   flex-direction: column;
   gap: var(--s-2);
   align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
+}
+.approach__card-cta-block .btn {
+  white-space: normal;
+  text-align: left;
+  line-height: 1.25;
+  max-width: 100%;
+}
+.approach__card-cta-block .cta__email {
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 .approach__card-cta-block h6 {
   font-family: var(--font-mono);
@@ -1908,6 +1930,19 @@ body.is-loaded .hero__scroll {
 }
 .approach__card-cta-block .btn { margin-top: 4px; }
 .approach__card-cta-block .cta__email { margin-top: 2px; }
+
+/* === Laptop breakpoint — German text needs more horizontal room.
+   Tighten column gap and rebalance the two-column grid so the body
+   text and the CTA / includes block each get adequate width.       */
+@media (min-width: 901px) and (max-width: 1280px) {
+  .approach__card {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: var(--s-4);
+  }
+  .approach__card-title { font-size: clamp(1.5rem, 2.6vw, 2.2rem); }
+  .approach__card-body { font-size: 0.96rem; line-height: 1.55; }
+  .approach__card-foot { column-gap: var(--s-3); font-size: 0.68rem; }
+}
 
 /* === Mobile fallback (no pinning, vertical list) === */
 @media (max-width: 900px) {

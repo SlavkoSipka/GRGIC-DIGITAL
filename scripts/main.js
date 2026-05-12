@@ -348,6 +348,7 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
         subject_line: subjectBase + (name ? ' — ' + name : ''),
         from_name: name,
         reply_to: email,
+        to_email: 'contact@digital-business-mg.com',
         company: company || '—',
         service: service || '—',
         budget: budget || '—',

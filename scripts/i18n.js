@@ -325,6 +325,9 @@
       'js.label.budget': 'Budget',
       'js.label.booking': 'Termin',
       'js.label.cet': 'MEZ',
+      'js.sending': 'Wird gesendet…',
+      'js.alert.send.ok': 'Vielen Dank — Ihre Nachricht wurde gesendet. Wir melden uns bald.',
+      'js.alert.send.err': 'Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie an contact@digital-business-mg.com.',
     },
 
     en: {
@@ -649,6 +652,9 @@
       'js.label.budget': 'Budget',
       'js.label.booking': 'Booking',
       'js.label.cet': 'CET',
+      'js.sending': 'Sending…',
+      'js.alert.send.ok': 'Thank you — your message was sent. We will get back to you soon.',
+      'js.alert.send.err': 'Could not send. Please try again or email contact@digital-business-mg.com.',
     },
   };
 

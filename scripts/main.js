@@ -285,7 +285,26 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
       });
     });
 
-    /* --- Submit (mailto handoff) --- */
+    /* --- Submit: EmailJS (if configured) else mailto --- */
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    let emailjsInited = false;
+
+    const openMailtoFallback = (subjectBase, name, email, company, service, budget, message, wantsBook, bDate, bTime) => {
+      const subject = encodeURIComponent(subjectBase + (name ? ' — ' + name : ''));
+      const lines = [
+        T('js.label.name') + ': ' + name,
+        T('js.label.email') + ': ' + email,
+        company ? T('js.label.company') + ': ' + company : null,
+        service ? T('js.label.service') + ': ' + service : null,
+        budget ? T('js.label.budget') + ': ' + budget : null,
+        wantsBook ? T('js.label.booking') + ': ' + bDate + ' / ' + bTime + ' (' + T('js.label.cet') + ')' : null,
+        '',
+        message,
+      ].filter(Boolean);
+      window.location.href =
+        'mailto:contact@digital-business-mg.com?subject=' + subject + '&body=' + encodeURIComponent(lines.join('\n'));
+    };
+
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const fd = new FormData(contactForm);
@@ -305,20 +324,66 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
       }
 
       const subjectBase = wantsBook ? T('js.subject.book') : T('js.subject.project');
-      const subject = encodeURIComponent(subjectBase + (name ? ' — ' + name : ''));
-      const lines = [
-        T('js.label.name') + ': ' + name,
-        T('js.label.email') + ': ' + email,
-        company ? T('js.label.company') + ': ' + company : null,
-        service ? T('js.label.service') + ': ' + service : null,
-        budget ? T('js.label.budget') + ': ' + budget : null,
-        wantsBook ? T('js.label.booking') + ': ' + bDate + ' / ' + bTime + ' (' + T('js.label.cet') + ')' : null,
-        '',
-        message,
-      ].filter(Boolean);
+      const cfg = window.DBG_EMAILJS || {};
+      const useEmailjs =
+        typeof emailjs !== 'undefined' &&
+        cfg.publicKey &&
+        cfg.serviceId &&
+        cfg.templateId;
 
-      window.location.href =
-        'mailto:contact@digital-business-mg.com?subject=' + subject + '&body=' + encodeURIComponent(lines.join('\n'));
+      if (!useEmailjs) {
+        openMailtoFallback(subjectBase, name, email, company, service, budget, message, wantsBook, bDate, bTime);
+        return;
+      }
+
+      if (!emailjsInited) {
+        emailjs.init({ publicKey: cfg.publicKey });
+        emailjsInited = true;
+      }
+
+      const bookingInfo = wantsBook
+        ? bDate + ' / ' + bTime + ' (' + T('js.label.cet') + ')'
+        : '—';
+      const templateParams = {
+        subject_line: subjectBase + (name ? ' — ' + name : ''),
+        from_name: name,
+        reply_to: email,
+        company: company || '—',
+        service: service || '—',
+        budget: budget || '—',
+        booking_info: bookingInfo,
+        message: message || '—',
+      };
+
+      const labelEl = document.getElementById('cf-submit-label');
+      const prevLabel = labelEl ? labelEl.innerHTML : '';
+      if (submitBtn) submitBtn.disabled = true;
+      if (labelEl) labelEl.innerHTML = T('js.sending');
+
+      emailjs
+        .send(cfg.serviceId, cfg.templateId, templateParams)
+        .then(() => {
+          alert(T('js.alert.send.ok'));
+          contactForm.reset();
+          if (bookToggle) {
+            bookToggle.checked = false;
+            if (calRoot) calRoot.hidden = true;
+            if (slotsBox) slotsBox.hidden = true;
+            selectedDate = null;
+            selectedTime = null;
+            if (dateInput) dateInput.value = '';
+            if (timeInput) timeInput.value = '';
+            slotBtns.forEach((b) => b.classList.remove('is-selected'));
+          }
+        })
+        .catch(() => {
+          alert(T('js.alert.send.err'));
+        })
+        .finally(() => {
+          if (submitBtn) submitBtn.disabled = false;
+          if (labelEl) labelEl.innerHTML = prevLabel;
+          updateSubmitLabel();
+        });
     });
   }
 })();

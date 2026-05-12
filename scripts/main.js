@@ -376,7 +376,8 @@ window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
             slotBtns.forEach((b) => b.classList.remove('is-selected'));
           }
         })
-        .catch(() => {
+        .catch((err) => {
+          console.error('EmailJS send failed:', err);
           alert(T('js.alert.send.err'));
         })
         .finally(() => {

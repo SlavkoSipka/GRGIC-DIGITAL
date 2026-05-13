@@ -17,7 +17,7 @@
       'nav.brand.aria': 'Digital Business Grgic – Startseite',
       'nav.primary.aria': 'Hauptnavigation',
       'nav.home': 'Startseite',
-      'nav.services': 'Lösungen',
+      'nav.services': 'Dienstleistungen',
       'nav.about': 'Über uns',
       'nav.contact': 'Kontakt',
       'nav.cta': 'Gespräch buchen',
@@ -173,7 +173,7 @@
       /* approach */
       'app.eyebrow': 'Wie wir arbeiten · 04',
       'app.title': 'Ein kleines Studio.<br/>Ein Senior-Prozess.',
-      'app.intro': 'Ein zuverlässiger Partner für Ihre digitalen Prozesse. Sie arbeiten direkt mit uns, vom ersten Gespräch bis zur finalen Lösung und Umsetzung.',
+      'app.intro': 'Sie arbeiten direkt mit uns &mdash; ein verantwortliches Team vom ersten Gespräch bis zur finalen Lieferung. Keine Account-Manager, keine Übergaben, keine Überraschungen auf der Rechnung.',
 
       'app.s1.meta': 'Schritt 01 <span>· 05</span>',
       'app.s1.title': 'Discovery-Gespräch',
@@ -210,7 +210,7 @@
 
       'app.s4.meta': 'Schritt 04 <span>· 05</span>',
       'app.s4.title': 'Launch &amp; Iteration',
-      'app.s4.body': 'Wir verschwinden nach dem Launch nicht. Analytics-Setup, die erste Iterationsrunde und eine klare Roadmap für die nächsten Schritte erstellen wir gemeinsam — in einem Rhythmus, der zu Ihrem Unternehmen passt.',
+      'app.s4.body': 'Wir verschwinden nach dem Launch nicht. Analytics-Setup, die erste Iterationsrunde und eine klare Roadmap für die nächsten Schritte erstellen wir gemeinsam. Gemeinsam, in einem Rhythmus, der zu Ihrem Unternehmen passt.',
       'app.s4.h6': 'Was enthalten ist',
       'app.s4.l1': 'Analytics- &amp; Monitoring-Setup',
       'app.s4.l2': '30-Tage-Iterationsfenster nach dem Launch',

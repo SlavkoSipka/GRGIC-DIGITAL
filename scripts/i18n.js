@@ -146,7 +146,7 @@
 
       /* about */
       'about.eyebrow': 'Über uns · 03',
-      'about.title': 'Digital Business Grgic,<br/>ein digitales Studio um <em>Ihr Wachstum</em> zu fördern.',
+      'about.title': 'Digital Business Grgic, ein digitales Studio um <em>Ihren Wachstum</em> zu fördern.',
       'about.kicker': 'Digitalisierung ist kein Trend — sondern ein Werkzeug, um echten Mehrwert zu schaffen. Genau dafür stehen wir: klar, effizient und zukunftsorientiert.',
       'about.lead.p1': '<strong>Digital Business Grgic</strong> ist ein modernes digitales Unternehmen mit einem klaren Ziel — anderen Unternehmen zu helfen, in der digitalen Welt erfolgreich zu wachsen.',
       'about.lead.p2': 'Als Schweizer Einzelunternehmen verbinden wir Flexibilität, persönliche Betreuung und tiefes Know-how, um massgeschneiderte Lösungen zu liefern, die wirklich funktionieren.',
@@ -172,8 +172,8 @@
 
       /* approach */
       'app.eyebrow': 'Wie wir arbeiten · 04',
-      'app.title': 'Ein kleines Studio.<br/>Ein Senior-Prozess.',
-      'app.intro': 'Sie arbeiten direkt mit uns &mdash; ein verantwortliches Team vom ersten Gespräch bis zur finalen Lieferung. Keine Account-Manager, keine Übergaben, keine Überraschungen auf der Rechnung.',
+      'app.title': 'Ein zuverlässiger Partner<br/>für Ihre digitale Prozesse.',
+      'app.intro': 'Sie arbeiten direkt mit uns, vom ersten Gespräch bis zur finalen Lösung und Umsetzung.',
 
       'app.s1.meta': 'Schritt 01 <span>· 05</span>',
       'app.s1.title': 'Discovery-Gespräch',
@@ -473,7 +473,7 @@
 
       /* about */
       'about.eyebrow': 'About us · 03',
-      'about.title': 'A digital studio<br/>built around <em>your growth</em>.',
+      'about.title': 'Digital Business Grgic, a digital studio to fuel <em>your growth</em>.',
       'about.kicker': 'Digitalization isn&rsquo;t a trend &mdash; it&rsquo;s a tool for creating real value. That&rsquo;s exactly what we stand for: clear, efficient and future-oriented.',
       'about.lead.p1': '<strong>Digital Business Grgic</strong> is a modern digital business with one clear goal &mdash; to help other companies grow successfully in the digital world.',
       'about.lead.p2': 'As a Swiss sole proprietorship we combine flexibility, personal attention and deep know-how to deliver tailor-made solutions that actually work.',
@@ -499,8 +499,8 @@
 
       /* approach */
       'app.eyebrow': 'How we work · 04',
-      'app.title': 'A small studio.<br/>A senior process.',
-      'app.intro': 'You work directly with us &mdash; one accountable team from first call to final delivery. No account managers, no handoffs, no surprises in the invoice.',
+      'app.title': 'A reliable partner<br/>for your digital processes.',
+      'app.intro': 'You work directly with us, from the first conversation to the final solution and delivery.',
 
       'app.s1.meta': 'Step 01 <span>· 05</span>',
       'app.s1.title': 'Discovery call',
